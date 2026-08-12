@@ -397,7 +397,7 @@ video {
    СТИЛИСТИКА РИКА И МОРТИ: АНИМАЦИИ И ИНТЕРАКТИВ
    ========================================================================== */
 
-/* 1. Настройка фона главного экрана для летающих частиц */
+/* Настройка фона главного экрана для летающих частиц */
 .hero {
     position: relative;
     overflow: hidden;
@@ -406,10 +406,10 @@ video {
 /* Базовый класс для искр */
 .portal-particle {
     position: absolute;
-    background: radial-gradient(circle, #39ff14 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(57,255,20,0.8) 0%, transparent 70%);
     border-radius: 50%;
-    opacity: 0.6;
     pointer-events: none;
+    z-index: 1; /* Чтобы частицы летали за текстом и аватаром, не мешая кликам */
     animation: float-around infinite ease-in-out;
 }
 
@@ -417,17 +417,17 @@ video {
 .p1 { width: 40px; height: 40px; top: 20%; left: 10%; animation-duration: 8s; }
 .p2 { width: 25px; height: 25px; top: 70%; left: 15%; animation-duration: 6s; animation-delay: 1s; }
 .p3 { width: 50px; height: 50px; top: 15%; left: 45%; animation-duration: 10s; animation-delay: 2s; }
-.p4 { width: 30px; height: 30px; top: 80%; left: 50%; animation-duration: 7s; }
+.p4 { width: 30px; height: 30px; top: 80%; left: 52%; animation-duration: 7s; }
 .p5 { width: 20px; height: 20px; top: 40%; left: 85%; animation-duration: 5s; animation-delay: 3s; }
 
 /* Анимация хаотичного парения частиц */
 @keyframes float-around {
-    0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.3; }
-    50% { transform: translateY(-40px) translateX(20px) scale(1.3); opacity: 0.7; }
-    100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.3; }
+    0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.2; }
+    50% { transform: translateY(-60px) translateX(30px) scale(1.4); opacity: 0.8; }
+    100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.2; }
 }
 
-/* 2. Глитч-эффект (кибер-искажение) текста при наведении */
+/* Глитч-эффект (кибер-искажение) текста при наведении */
 .glitch-text:hover {
     animation: text-glitch 0.3s linear infinite;
     cursor: default;
@@ -441,13 +441,13 @@ video {
     100% { text-shadow: 2px -2px 0 #00f0ff, -2px 2px 0 #39ff14; }
 }
 
-/* 3. Космическая пульсирующая кнопка «Слушать Демо» */
+/* Космическая пульсирующая кнопка «Слушать Демо» */
 .anime-btn {
     border: 2px solid #39ff14 !important;
-    box-shadow: 0 0 15px rgba(57, 255, 20, 0.4), inset 0 0 5px rgba(57, 255, 20, 0.2) !important;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.4) !important;
     background: transparent;
-    transition: all 0.3s ease-index;
-    animation: btn-pulse 2s infinite;
+    transition: all 0.3s ease; /* ОПЕЧАТКА ИСПРАВЛЕНА ТУТ */
+    animation: btn-pulse 2s infinite !important;
 }
 
 .anime-btn:hover {
@@ -459,7 +459,8 @@ video {
 
 @keyframes btn-pulse {
     0% { box-shadow: 0 0 15px rgba(57, 255, 20, 0.4); }
-    50% { box-shadow: 0 0 25px #39ff14, 0 0 10px #00f0ff; }
+    50% { box-shadow: 0 0 25px #39ff14, 0 0 35px rgba(0, 240, 255, 0.6); }
     100% { box-shadow: 0 0 15px rgba(57, 255, 20, 0.4); }
 }
+
 
