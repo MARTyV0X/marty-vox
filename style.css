@@ -501,11 +501,22 @@ video {
    ФИНАЛЬНЫЕ ВИЗУАЛЬНЫЕ УЛУЧШЕНИЯ
    ========================================================================== */
 
-/* 1. Эффектное неоновое свечение для плашки над заголовком */
+/* 1. Эффектное неоновое свечение и контрастная обводка для плашки */
 .badge {
     background: var(--accent-neon) !important;
+    color: #ffffff !important;
+    font-weight: 800 !important; /* Сделали буквы более жирными */
+    letter-spacing: 1px !important; /* Немного раздвинули буквы для читаемости */
     box-shadow: 0 0 15px var(--accent-neon), 0 0 30px rgba(57, 255, 20, 0.4) !important;
-    text-shadow: 0 0 5px #000;
+    
+    /* Добавляем жирную черную обводку для букв */
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000,
+         0px  2px 4px rgba(0, 0, 0, 0.8) !important; 
+         
     transition: 0.3s ease;
 }
 
