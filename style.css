@@ -497,5 +497,49 @@ video {
     align-items: center !important;
     flex-shrink: 0 !important;
 }
+/* ==========================================================================
+   ФИНАЛЬНЫЕ ВИЗУАЛЬНЫЕ УЛУЧШЕНИЯ
+   ========================================================================== */
+
+/* 1. Эффектное неоновое свечение для плашки над заголовком */
+.badge {
+    background: var(--accent-neon) !important;
+    box-shadow: 0 0 15px var(--accent-neon), 0 0 30px rgba(57, 255, 20, 0.4) !important;
+    text-shadow: 0 0 5px #000;
+    transition: 0.3s ease;
+}
+
+/* 2. Красивое подчеркивание ссылок в меню при наведении */
+nav a {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-blue);
+    box-shadow: 0 0 8px var(--accent-blue);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%; /* Линия будет красиво выезжать слева направо */
+}
+
+/* 3. Интерактив для карточек с вашими работами и блогом */
+.card, .post {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, border-color 0.3s ease !important;
+}
+
+.card:hover, .post:hover {
+    transform: translateY(-8px) scale(1.02) !important; /* Карточка слегка приподнимается и увеличивается */
+    border-color: var(--accent-neon) !important; /* Рамка подсвечивается зеленым */
+    box-shadow: 0 15px 30px rgba(57, 255, 20, 0.2) !important; /* Появляется мягкая неоновая тень снизу */
+}
 
 
