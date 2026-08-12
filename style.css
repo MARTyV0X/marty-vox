@@ -393,4 +393,73 @@ video {
     80% { transform: scale(0.95) rotate(45deg); opacity: 0.9; }
     100% { transform: scale(1.02) rotate(360deg); opacity: 1; }
 }
+/* ==========================================================================
+   СТИЛИСТИКА РИКА И МОРТИ: АНИМАЦИИ И ИНТЕРАКТИВ
+   ========================================================================== */
+
+/* 1. Настройка фона главного экрана для летающих частиц */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Базовый класс для искр */
+.portal-particle {
+    position: absolute;
+    background: radial-gradient(circle, #39ff14 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0.6;
+    pointer-events: none;
+    animation: float-around infinite ease-in-out;
+}
+
+/* Разные размеры и траектории для каждой искры */
+.p1 { width: 40px; height: 40px; top: 20%; left: 10%; animation-duration: 8s; }
+.p2 { width: 25px; height: 25px; top: 70%; left: 15%; animation-duration: 6s; animation-delay: 1s; }
+.p3 { width: 50px; height: 50px; top: 15%; left: 45%; animation-duration: 10s; animation-delay: 2s; }
+.p4 { width: 30px; height: 30px; top: 80%; left: 50%; animation-duration: 7s; }
+.p5 { width: 20px; height: 20px; top: 40%; left: 85%; animation-duration: 5s; animation-delay: 3s; }
+
+/* Анимация хаотичного парения частиц */
+@keyframes float-around {
+    0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.3; }
+    50% { transform: translateY(-40px) translateX(20px) scale(1.3); opacity: 0.7; }
+    100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.3; }
+}
+
+/* 2. Глитч-эффект (кибер-искажение) текста при наведении */
+.glitch-text:hover {
+    animation: text-glitch 0.3s linear infinite;
+    cursor: default;
+}
+
+@keyframes text-glitch {
+    0% { text-shadow: 2px -2px 0 #00f0ff, -2px 2px 0 #39ff14; }
+    25% { text-shadow: -2px 3px 0 #00f0ff, 2px -1px 0 #39ff14; transform: skewX(-2deg); }
+    50% { text-shadow: 3px 1px 0 #00f0ff, -3px -2px 0 #39ff14; }
+    75% { text-shadow: -1px -3px 0 #00f0ff, 1px 3px 0 #39ff14; transform: skewX(2deg); }
+    100% { text-shadow: 2px -2px 0 #00f0ff, -2px 2px 0 #39ff14; }
+}
+
+/* 3. Космическая пульсирующая кнопка «Слушать Демо» */
+.anime-btn {
+    border: 2px solid #39ff14 !important;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.4), inset 0 0 5px rgba(57, 255, 20, 0.2) !important;
+    background: transparent;
+    transition: all 0.3s ease-index;
+    animation: btn-pulse 2s infinite;
+}
+
+.anime-btn:hover {
+    background: #39ff14 !important;
+    color: #06090e !important;
+    box-shadow: 0 0 30px #39ff14, 0 0 50px #00f0ff !important;
+    transform: translateY(-3px) scale(1.03);
+}
+
+@keyframes btn-pulse {
+    0% { box-shadow: 0 0 15px rgba(57, 255, 20, 0.4); }
+    50% { box-shadow: 0 0 25px #39ff14, 0 0 10px #00f0ff; }
+    100% { box-shadow: 0 0 15px rgba(57, 255, 20, 0.4); }
+}
 
