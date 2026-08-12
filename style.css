@@ -575,5 +575,16 @@ nav a:hover::after {
     border-color: var(--accent-neon) !important; /* Рамка подсвечивается зеленым */
     box-shadow: 0 15px 30px rgba(57, 255, 20, 0.2) !important; /* Появляется мягкая неоновая тень снизу */
 }
+/* ПРИНУДИТЕЛЬНОЕ ДОБАВЛЕНИЕ ОСТАЛЬНЫХ ЧАСТИЦ (6-15) */
+.p6 { width: 35px !important; height: 35px !important; top: 60% !important; left: 25% !important; animation-duration: 9s !important; }
+.p7 { width: 15px !important; height: 15px !important; top: 25% !important; left: 22% !important; animation-duration: 4s !important; }
+.p8 { width: 45px !important; height: 45px !important; top: 70% !important; left: 70% !important; animation-duration: 12s !important; }
+.p9 { width: 25px !important; height: 25px !important; top: 10% !important; left: 75% !important; animation-duration: 6s !important; }
+.p10 { width: 30px !important; height: 30px !important; top: 50% !important; left: 5% !important; animation-duration: 8s !important; }
+.p11 { width: 55px !important; height: 55px !important; top: 80% !important; left: 82% !important; animation-duration: 14s !important; }
+.p12 { width: 20px !important; height: 20px !important; top: 45% !important; left: 40% !important; animation-duration: 5s !important; }
+.p13 { width: 35px !important; height: 35px !important; top: 5% !important; left: 55% !important; animation-duration: 10s !important; }
+.p14 { width: 22px !important; height: 22px !important; top: 90% !important; left: 28% !important; animation-duration: 7s !important; }
+.p15 { width: 40px !important; height: 40px !important; top: 55% !important; left: 92% !important; animation-duration: 9s !important; }
 
 
