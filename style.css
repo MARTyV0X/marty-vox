@@ -465,5 +465,37 @@ video {
     50% { box-shadow: 0 0 25px #39ff14, 0 0 35px rgba(0, 240, 255, 0.6); }
     100% { box-shadow: 0 0 15px rgba(57, 255, 20, 0.4); }
 }
+/* ПРИНУДИТЕЛЬНОЕ ВЫРАВНИВАНИЕ ГЛАВНОГО ЭКРАНА */
+.hero {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 80px !important;
+    padding: 80px 8% !important;
+    min-height: 85vh !important;
+}
+
+/* Расширяем блок контента, чтобы текст не сжимался */
+.hero-content {
+    max-width: 600px !important;
+    flex-shrink: 0 !important;
+}
+
+/* Настройка шрифта для описания */
+.hero-description {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    color: #a4b3c6 !important;
+    margin-bottom: 30px !important;
+    white-space: normal !important; /* Разрешает тексту переноситься на новые строки */
+}
+
+/* Фиксируем аватарку справа, чтобы она не уезжала */
+.hero-image {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+}
 
 
