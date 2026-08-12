@@ -75,11 +75,14 @@ nav a:hover {
 .hero {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Прижимает контент и аватар ближе друг к другу */
-    gap: 80px;                   /* Фиксированный отступ между текстом и аватаром */
+    justify-content: center; /* Центрирует всю группу элементов */
+    gap: 100px;              /* Идеальное расстояние между текстом и аватаркой */
     padding: 80px 8%;
     min-height: 85vh;
+    position: relative;
+    overflow: hidden;
 }
+
 
 .hero-content {
     max-width: 550px;
