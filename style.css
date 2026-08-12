@@ -103,7 +103,9 @@ nav a:hover {
     font-size: 48px;
     line-height: 1.2;
     margin-bottom: 20px;
+    animation: permanent-glitch 2s infinite linear; /* ДОБАВИЛИ ЭТУ СТРОЧКУ */
 }
+
 
 .highlight {
     color: var(--accent-blue);
@@ -464,7 +466,6 @@ video {
         transform: skew(0deg); 
     }
 }
-
 
 /* Космическая пульсирующая кнопка «Слушать Демо» */
 .anime-btn {
