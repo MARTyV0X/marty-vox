@@ -1,0 +1,369 @@
+/* Общие настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    --bg-color: #06090e;        /* Более глубокий, сочный темный фон */
+    --card-bg: #121820;         /* Фон для карточек и постов */
+    --accent-neon: #39ff14;     /* Ярко-зеленый неон (как на аватаре) */
+    --accent-blue: #00f0ff;     /* Голубой киберпанк/аниме неон */
+    --text-color: #a3e635;      /* Салатовый цвет для акцентного текста */
+    --text-white: #ffffff;      /* Белый цвет для обычных букв */
+}
+
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Шапка сайта */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: rgba(11, 12, 16, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--accent-neon);
+}
+
+.logo {
+    font-family: 'Comfortaa', cursive;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--accent-neon);
+    text-shadow: 0 0 10px var(--accent-neon);
+}
+
+nav a {
+    color: var(--text-white);
+    text-decoration: none;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-blue);
+}
+
+.btn-contact {
+    border: 2px solid var(--accent-blue);
+    padding: 8px 16px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
+
+.btn-contact:hover {
+    background: var(--accent-blue);
+    color: var(--bg-color);
+}
+
+/* Главный экран */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Прижимает контент и аватар ближе друг к другу */
+    gap: 80px;                   /* Фиксированный отступ между текстом и аватаром */
+    padding: 80px 8%;
+    min-height: 85vh;
+}
+
+.hero-content {
+    max-width: 550px;
+}
+
+.badge {
+    background: var(--accent-neon);
+    padding: 5px 12px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 3px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: var(--accent-blue);
+    text-shadow: 0 0 15px var(--accent-blue);
+}
+
+.hero p {
+    color: #a4b3c6;
+    margin-bottom: 30px;
+}
+
+.cta-btn {
+    display: inline-block;
+    background: transparent;
+    color: var(--text-white);
+    border: 2px solid var(--accent-neon);
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background: var(--accent-neon);
+    transform: translateY(-3px);
+}
+
+.avatar-placeholder {
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(45deg, var(--card-bg), #2c3b4e);
+    border: 4px dashed var(--accent-blue);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-blue);
+    font-weight: bold;
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
+}
+
+/* Секции общие */
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.section-title span {
+    color: var(--accent-neon);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 0 8%;
+}
+
+/* Секция Работы (Аудио) */
+.works {
+    padding: 80px 0;
+    background: #11141a;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 25px;
+    border-left: 5px solid var(--accent-blue);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 240, 255, 0.1);
+}
+
+.card-tag {
+    font-size: 11px;
+    color: var(--accent-blue);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Блог */
+.blog {
+    padding: 80px 0;
+}
+
+.post {
+    background: #161b22;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #30363d;
+}
+
+.post-date {
+    font-size: 12px;
+    color: var(--accent-neon);
+    margin-bottom: 10px;
+}
+
+.post h3 {
+    margin-bottom: 15px;
+}
+
+.post p {
+    color: #8b949e;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.read-more {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Подвал */
+footer {
+    background: #050508;
+    text-align: center;
+    padding: 60px 20px;
+    border-top: 1px solid #1f2833;
+}
+
+footer h2 {
+    margin-bottom: 10px;
+    color: var(--accent-blue);
+}
+
+.socials {
+    margin: 25px 0;
+}
+
+.socials a {
+    color: var(--text-white);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    border-bottom: 2px solid var(--accent-neon);
+    padding-bottom: 3px;
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    color: var(--accent-neon);
+}
+
+.copy {
+    font-size: 12px;
+    color: #4b5563;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    header { flex-direction: column; gap: 15px; }
+    nav a { margin: 0 10px; }
+    .hero { flex-direction: column-reverse; text-align: center; gap: 40px; }
+    .hero h1 { font-size: 32px; }
+    .avatar-placeholder { width: 260px; height: 260px; }
+}
+/* Базовые стили аватара */
+.anime-avatar {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #39ff14;
+    box-shadow: 0 0 25px #39ff14;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+    flex-shrink: 0;
+    cursor: pointer; /* Делает курсор в виде указательного пальца */
+}
+/* Эффект при наведении (плавное увеличение) */
+.anime-avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 45px #39ff14, 0 0 70px rgba(57, 255, 20, 0.5);
+}
+/* АНИМАЦИЯ ПРИ НАЖАТИИ (КЛИКЕ) */
+.anime-avatar:active {
+    transform: scale(0.9) rotate(360deg); /* ИСПРАВЛЕНО: теперь тут deg вместо px */
+    box-shadow: 0 0 80px #39ff14, 0 0 150px #00f0ff; 
+    transition: transform 0.1s ease, box-shadow 0.1s ease; 
+}
+/* На всякий случай убираем стандартное выделение ссылки вокруг аватара */
+.avatar-link {
+    text-decoration: none;
+    display: inline-block;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Эффект при наведении */
+.anime-avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px #39ff14;
+}
+/*
+video {
+    max-height: 200px;
+    object-fit: cover; /* Видео аккуратно впишется в карточку */
+    background: #000;  /* Черный фон плеера до начала воспроизведения */
+}
+/* Контейнер для позиционирования эффектов */
+.avatar-container {
+    position: relative;
+    display: inline-block;
+}
+/* Контейнер для позиционирования */
+.avatar-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Новая электрическая аура вокруг аватара */
+.lightning-aura {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 6px double #39ff14; /* Двойная зеленая линия */
+    border-radius: 50%;
+    opacity: 0; /* В обычном состоянии скрыта */
+    pointer-events: none;
+    transition: opacity 0.1s ease;
+}
+
+/* ЭФФЕКТ ПРИ КЛИКЕ */
+.avatar-container:active .lightning-aura {
+    opacity: 1; /* Проявляется мгновенно */
+    filter: url(#anime-lightning); /* Применяем фильтр ломаных линий */
+    box-shadow: 0 0 30px #39ff14, 0 0 60px #00f0ff, inset 0 0 20px #39ff14;
+    animation: lightning-shock 0.15s infinite linear; /* Заставляем молнии бешено дергаться */
+}
+
+/* Анимация хаотичного подергивания электричества */
+@keyframes lightning-shock {
+    0% { transform: scale(1) rotate(0deg); opacity: 0.9; }
+    20% { transform: scale(1.04) rotate(90deg); opacity: 1; }
+    40% { transform: scale(0.98) rotate(180deg); opacity: 0.8; }
+    60% { transform: scale(1.05) rotate(270deg); opacity: 1; }
+    80% { transform: scale(0.95) rotate(45deg); opacity: 0.9; }
+    100% { transform: scale(1.02) rotate(360deg); opacity: 1; }
+}
+

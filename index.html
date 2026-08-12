@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARTy ИЗБУШКА ДАББЕРА | Anime Dubbing</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем аниме-шрифт с Google Fonts -->
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header>
+        <div class="logo">MARTy // <span>ИЗБУШКА ДАББЕРА</span></div>
+        <nav>
+            <a href="#about">Обо мне</a>
+            <a href="#works">Работы</a>
+            <a href="#blog">Блог</a>
+            <a href="#contacts" class="btn-contact">Связаться</a>
+        </nav>
+    </header>
+
+    <!-- Главный экран (Hero) -->
+    <section id="about" class="hero">
+        <div class="hero-content">
+            <span class="badge">Любительская озвучка</span>
+            <h1>Озвучиваю <br><span class="highlight">сердцем</span></h1>
+            <p>Добро пожаловать в мой блог актёра дубляжа и закадра. Даю жизнь персонажам аниме, игр и фильмов. Послушайте мои демо-записи ниже!</p>
+            <a href="#works" class="cta-btn">Слушать Демо</a>
+        </div>
+        <div class="hero-image">
+    <div class="avatar-container">
+        <a href="#?" class="avatar-link">
+            <img src="avatar.jpg" alt="Аниме Аватар" class="anime-avatar">
+        </a>
+        <!-- Новый круговой разряд молнии -->
+        <div class="lightning-aura"></div>
+    </div>
+</div>
+
+<!-- Специальный SVG-код для генерации ломаных линий молнии (вставьте сразу под hero-image) -->
+<svg style="position: absolute; width: 0; height: 0;">
+    <filter id="anime-lightning">
+        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="4" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="30" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+</svg>
+
+    </section>
+
+    <!-- Секция с работами (Портфолио) -->
+    <section id="works" class="works">
+        <h2 class="section-title">Пример <span>Работ</span></h2>
+        <div class="grid">
+                        <!-- Карточка 1 -->
+            <div class="card">
+                <div class="card-tag">Сериал</div>
+                <h3>Твердыня</h3>
+                <p>Пример голоса для сериалов.</p>
+                <!-- Видео-плеер для Твердыня -->
+                <video controls style="width: 100%; border-radius: 8px; margin-top: 15px;">
+                    <source src="patriot.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+            </div>
+
+            <!-- Карточка 2 -->
+            <div class="card">
+                <div class="card-tag">Игры / Шутеры</div>
+                <h3>Крысавчик (Overwatch)</h3>
+                <p>Пример эксцентричной, безумной и комедийной озвучки персонажа.</p>
+                <!-- Видео-плеер для Крысавчика -->
+                <video controls style="width: 100%; border-radius: 8px; margin-top: 15px;">
+                    <source src="Junkrat.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+            </div>
+            <!-- Карточка 3 -->
+            <div class="card">
+                <div class="card-tag">Фильм</div>
+                <h3>Капитан Джек Воробей/Уил Тёрнер</h3>
+                <p>Сцена в темнице.</p>
+                <!-- Видео-плеер для Пираты -->
+                <video controls style="width: 100%; border-radius: 8px; margin-top: 15px;">
+                    <source src="pirati.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция Блога -->
+    <section id="blog" class="blog">
+        <h2 class="section-title">Закулисье <span>Блога</span></h2>
+        <div class="grid">
+                        <!-- Пост 1 -->
+            <article class="post">
+                <div class="post-date">12 Авг 2026</div>
+                <h3>Как я пришёл к озвучке</h3>
+                <p>Проекты в которых участвовал</p>
+                <a href="post1.html" class="read-more">Читать далее →</a> <!-- Обновили ссылку -->
+            </article>
+
+            <!-- Пост 2 -->
+            <article class="post">
+                <div class="post-date">05 Авг 2026</div>
+                <h3>Моё оборудование</h3>
+                <p>Рассказываю, на какое оборудование пишу дома и как добиться студийного качества в обычной комнате.</p>
+                <a href="post2.html" class="read-more">Читать далее →</a> <!-- Заменили # на post2.html -->
+            </article>
+</div> <!-- Закрываем сетку блога -->
+    </section> <!-- Закрываем секцию блога -->
+
+<!-- Подвал и Контакты -->
+    <footer id="contacts">
+        <h2>Готовы к сотрудничеству?</h2>
+        <p>Пишите для коммерческих предложений, фандаб-проектов и коллабораций.</p>
+        <div class="socials">
+            <a href="https://t.me/higina_dub" target="_blank">Telegram</a>
+            <a href="https://www.youtube.com/@Higina_Ozvu4atora" target="_blank">YouTube</a>
+            <a href="https://share.google/8WrAOcAzuA7xno9Zu" target="_blank">Фандаб Wiki</a>
+        </div>
+        <p class="copy">&copy; 2026 MARTY // ИЗБУШКА ДАББЕРА. Стиль вдохновлен Аниме.</p>
+    </footer>
+<!-- Скрытый плеер для эффекта клика -->
+    <audio id="click-sound" src="rickandmor_rdr0da12.mp3" preload="auto"></audio>
+
+    <!-- Скрипт, который включает звук при нажатии на аватар -->
+    <script>
+        const avatar = document.querySelector('.anime-avatar');
+        const sound = document.getElementById('click-sound');
+
+        avatar.addEventListener('mousedown', () => {
+            sound.currentTime = 0; // Сбрасываем звук на начало, чтобы можно было кликать часто
+            sound.play();          // Запускаем воспроизведение
+        });
+    </script>
+</body>
+</html>
