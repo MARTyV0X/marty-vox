@@ -430,19 +430,41 @@ video {
     100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.2; }
 }
 
-/* Глитч-эффект (кибер-искажение) текста при наведении */
-.glitch-text:hover {
-    animation: text-glitch 0.3s linear infinite;
+/* Постоянный глитч-эффект для главного заголовка */
+.glitch-text {
+    animation: permanent-glitch 3s infinite linear;
+    position: relative;
     cursor: default;
 }
 
-@keyframes text-glitch {
-    0% { text-shadow: 2px -2px 0 #00f0ff, -2px 2px 0 #39ff14; }
-    25% { text-shadow: -2px 3px 0 #00f0ff, 2px -1px 0 #39ff14; transform: skewX(-2deg); }
-    50% { text-shadow: 3px 1px 0 #00f0ff, -3px -2px 0 #39ff14; }
-    75% { text-shadow: -1px -3px 0 #00f0ff, 1px 3px 0 #39ff14; transform: skewX(2deg); }
-    100% { text-shadow: 2px -2px 0 #00f0ff, -2px 2px 0 #39ff14; }
+/* Анимация хаотичного цифрового сбоя (срабатывает рывками, как настоящий глитч) */
+@keyframes permanent-glitch {
+    0%, 94%, 100% { 
+        text-shadow: none; 
+        transform: skew(0deg); 
+    }
+    95% { 
+        text-shadow: 3px -2px 0 #00f0ff, -3px 2px 0 #39ff14; 
+        transform: skew(-3deg); 
+    }
+    96% { 
+        text-shadow: -3px 3px 0 #00f0ff, 3px -1px 0 #39ff14; 
+        transform: skew(3deg); 
+    }
+    97% { 
+        text-shadow: 4px 1px 0 #00f0ff, -4px -3px 0 #39ff14; 
+        transform: skew(-1deg); 
+    }
+    98% { 
+        text-shadow: -2px -3px 0 #00f0ff, 2px 3px 0 #39ff14; 
+        transform: skew(2deg); 
+    }
+    99% { 
+        text-shadow: 3px -1px 0 #00f0ff, -2px 2px 0 #39ff14; 
+        transform: skew(0deg); 
+    }
 }
+
 
 /* Космическая пульсирующая кнопка «Слушать Демо» */
 .anime-btn {
