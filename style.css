@@ -699,6 +699,28 @@ nav a:hover::after {
         max-width: 380px !important;
     }
 }
+/* ЖЕЛЕЗОБЕТОННЫЙ СЛОЙ ДЛЯ ВИДЕО-ФОНА */
+.hero-video-bg {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Растягивает видео без искажения пропорций */
+    z-index: 0 !important;        /* Самый задний план */
+    pointer-events: none !important;
+    opacity: 0.75 !important;     /* Слегка приглушаем, чтобы неоновый текст и плазма горели ярче */
+}
+
+/* Принудительно поднимаем контент, аватарку и частицы НАД видеороликом */
+.hero-content, 
+.hero-image, 
+.portal-particle, 
+.glitch-text-final, 
+.plasma-title-container {
+    position: relative !important;
+    z-index: 5 !important;
+}
 
 
 
