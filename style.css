@@ -323,31 +323,41 @@ footer h2 {
 
 }
 
-/* ОБНОВЛЕННЫЙ ЖИВОЙ ВИДЕО-АВАТАР */
+/* ОБНОВЛЕННЫЙ ЖИВОЙ ВИДЕО-АВАТАР С ФИКСОМ ДЛЯ МОБИЛОК */
 .anime-avatar {
     width: 320px !important;
     height: 320px !important;
     object-fit: cover !important;
-    border-radius: 50% !important; /* Намертво обрезаем квадратное видео в идеальный круг */
+    
+    /* Жесткое скругление углов, которое не слетит при клике */
+    border-radius: 50% !important; 
+    overflow: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    
+    /* Секретный фикс для Safari/Chrome на смартфонах */
+    -webkit-mask-image: -webkit-radial-gradient(white, black) !important;
+    
     border: 4px solid #39ff14 !important;
     box-shadow: 0 0 25px #39ff14 !important;
     transition: all 0.2s ease !important;
     flex-shrink: 0 !important;
     cursor: pointer !important;
     pointer-events: auto !important;
-    animation: none !important; /* УБРАЛИ СТАРЕЙШЕЕ ВРАЩЕНИЕ CSS */
 }
 
-/* Эффект при наведении — просто усиливаем неоновое свечение */
+/* Эффект при наведении */
 .anime-avatar:hover {
     box-shadow: 0 0 45px #39ff14, 0 0 70px rgba(57, 255, 20, 0.5) !important;
 }
 
-/* Эффект при клике (сохраняем сжатие и яростную неоновую вспышку) */
+/* Эффект при клике (сохраняем сжатие и вспышку без потери круглой формы) */
 .anime-avatar:active {
     transform: scale(0.95) !important;
+    border-radius: 50% !important; /* Дублируем для надежности на телефонах */
     box-shadow: 0 0 80px #39ff14, 0 0 150px #00f0ff !important;
 }
+
 
 /* На всякий случай убираем стандартное выделение ссылки вокруг аватара */
 .avatar-link {
@@ -753,5 +763,6 @@ nav a:hover::after {
     position: absolute !important;
     z-index: 2 !important; /* Частицы летают ПЕРЕД видео, но ЗА текстом */
 }
+
 
 
