@@ -860,6 +860,47 @@ nav a:hover::after {
     z-index: 10 !important; /* Ложится поверх видео-аватара */
     mix-blend-mode: screen !important; /* Делает вспышку сочной и неоновой */
 }
+/* ==========================================================================
+   КОМПАКТНАЯ СЕТКА РАБОТ И КОРРЕКТНЫЕ ВИДЕОПЛЕЕРЫ
+   ========================================================================== */
+
+/* Сетка карточек в 3 колонки */
+.works-grid, .blog-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important; /* Карточки встанут в ряд */
+    gap: 30px !important;
+    width: 100% !important;
+}
+
+/* Ограничение высоты видеоплееров, чтобы они не превращались в черные полосы */
+.card video {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 200px !important; /* Плеер станет компактным прямоугольником */
+    object-fit: cover !important;
+    border-radius: 8px !important;
+    margin-top: 15px !important;
+    background-color: #000 !important;
+}
+
+/* Красивые отступы для заголовков секций */
+.section-title {
+    font-family: 'Orbitron', sans-serif !important;
+    font-size: 32px !important;
+    margin: 60px 0 40px 0 !important;
+    text-align: center !important;
+    color: #fff !important;
+}
+
+/* Мобильный фикс для сетки работ */
+@media (max-width: 768px) {
+    .works-grid, .blog-grid {
+        grid-template-columns: 1fr !important; /* На телефонах карточки встанут друг под друга */
+    }
+    .card video {
+        max-height: 180px !important;
+    }
+}
 
 
 
