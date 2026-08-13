@@ -313,6 +313,14 @@ footer h2 {
     }
     .hero h1 { font-size: 32px; }
     .avatar-placeholder, .anime-avatar { width: 260px; height: 260px; }
+        .plasma-bg-layer {
+        width: 100% !important;
+        max-width: 400px !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+    }
+
 }
 
 /* Базовые стили аватара */
