@@ -323,29 +323,32 @@ footer h2 {
 
 }
 
-/* Базовые стили аватара */
+/* ОБНОВЛЕННЫЙ ЖИВОЙ ВИДЕО-АВАТАР */
 .anime-avatar {
-    width: 320px;
-    height: 320px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid #39ff14;
-    box-shadow: 0 0 25px #39ff14;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
-    flex-shrink: 0;
-    cursor: pointer; /* Делает курсор в виде указательного пальца */
+    width: 320px !important;
+    height: 320px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important; /* Намертво обрезаем квадратное видео в идеальный круг */
+    border: 4px solid #39ff14 !important;
+    box-shadow: 0 0 25px #39ff14 !important;
+    transition: all 0.2s ease !important;
+    flex-shrink: 0 !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    animation: none !important; /* УБРАЛИ СТАРЕЙШЕЕ ВРАЩЕНИЕ CSS */
 }
-/* Эффект при наведении (плавное увеличение) */
+
+/* Эффект при наведении — просто усиливаем неоновое свечение */
 .anime-avatar:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 45px #39ff14, 0 0 70px rgba(57, 255, 20, 0.5);
+    box-shadow: 0 0 45px #39ff14, 0 0 70px rgba(57, 255, 20, 0.5) !important;
 }
-/* АНИМАЦИЯ ПРИ НАЖАТИИ (КЛИКЕ) */
+
+/* Эффект при клике (сохраняем сжатие и яростную неоновую вспышку) */
 .anime-avatar:active {
-    transform: scale(0.9) rotate(360deg); /* ИСПРАВЛЕНО: теперь тут deg вместо px */
-    box-shadow: 0 0 80px #39ff14, 0 0 150px #00f0ff; 
-    transition: transform 0.1s ease, box-shadow 0.1s ease; 
+    transform: scale(0.95) !important;
+    box-shadow: 0 0 80px #39ff14, 0 0 150px #00f0ff !important;
 }
+
 /* На всякий случай убираем стандартное выделение ссылки вокруг аватара */
 .avatar-link {
     text-decoration: none;
