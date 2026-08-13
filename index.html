@@ -59,15 +59,17 @@
         </div>
 
 
-                <div class="hero-image">
-            <div class="avatar-container">
-                <!-- Заменили картинку на зацикленный бесшумный видеоплеер -->
-                <video autoplay muted loop playsinline class="anime-avatar">
-                    <source src="avatar.mp4" type="video/mp4">
+                        <div class="hero-image">
+            <!-- СУПЕР-МАСКА ДЛЯ ЗАЩИТЫ ВИДЕО-АВАТАРА ОТ КВАДРАТОВ -->
+            <div class="super-avatar-mask">
+                <video autoplay muted loop playsinline webkit-playsinline controlslist="nodownload noplaybackrate" class="super-video-avatar">
+                    <!-- ХВОСТИК #t=0.001 ПРИНУДИТЕЛЬНО СБРОСИТ МОБИЛЬНЫЙ КЭШ ВИДЕО -->
+                    <source src="avatar.mp4#t=0.001" type="video/mp4">
                 </video>
                 <div class="lightning-aura"></div>
             </div>
         </div>
+
 
     </section>
 
