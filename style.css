@@ -753,6 +753,35 @@ nav a:hover::after {
     position: absolute !important;
     z-index: 2 !important; /* Частицы летают ПЕРЕД видео, но ЗА текстом */
 }
+/* ==========================================================================
+   ПОСТОЯННАЯ КРУГОВАЯ ЗЕЛЕНАЯ МОЛНИЯ ПОРТАЛА (БЕЗ УЧАСТИЯ КЛИКОВ)
+   ========================================================================== */
+
+/* Находим контейнер аватара и запускаем бесконечное сочное свечение */
+.avatar-container, .super-avatar-mask {
+    position: relative !important;
+    animation: rick-portal-lightning 2s infinite ease-in-out !important;
+}
+
+/* Анимация пульсирующей круговой зеленой молнии */
+@keyframes rick-portal-lightning {
+    0%, 100% {
+        box-shadow: 
+            0 0 20px #39ff14, 
+            0 0 40px rgba(57, 255, 20, 0.6), 
+            inset 0 0 15px rgba(57, 255, 20, 0.4) !important;
+        border-color: #39ff14 !important;
+    }
+    50% {
+        /* В пике энергия взрывается максимальной яркостью */
+        box-shadow: 
+            0 0 35px #39ff14, 
+            0 0 70px #39ff14, 
+            0 0 100px rgba(0, 240, 255, 0.3), /* Легкий оттенок нестабильной плазмы */
+            inset 0 0 25px rgba(57, 255, 20, 0.8) !important;
+        border-color: #ffffff !important; /* Рамка вспыхивает белым от напряжения */
+    }
+}
 
 
 
