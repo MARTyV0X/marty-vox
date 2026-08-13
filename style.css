@@ -836,6 +836,30 @@ nav a:hover::after {
     .super-plasma-bg { width: 480px !important; max-width: 140% !important; top: 50% !important; left: 50% !important; transform: translate(-50%, -50%) !important; }
     .super-avatar-mask { width: 260px !important; height: 260px !important; border-radius: 50% !important; }
 }
+/* ==========================================================================
+   ВОЗВРАЩЕНИЕ ЭФФЕКТА МОЛНИЙ И СВЕЧЕНИЯ ПРИ КЛИКЕ
+   ========================================================================== */
+
+/* Настройка контейнера, чтобы вспышка центрировалась внутри круга */
+.super-avatar-mask {
+    position: relative !important;
+}
+
+/* Сам эффект неонового взрыва молний (изначально скрыт) */
+.lightning-aura {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    /* Ярко-голубое радиальное свечение с эффектом разряда */
+    background: radial-gradient(circle, rgba(0, 240, 255, 0.8) 0%, rgba(57, 255, 20, 0.4) 50%, transparent 80%) !important;
+    opacity: 0; /* Прозрачный по умолчанию */
+    transition: opacity 0.05s ease !important; /* Мгновенное появление при клике */
+    pointer-events: none !important;
+    z-index: 10 !important; /* Ложится поверх видео-аватара */
+    mix-blend-mode: screen !important; /* Делает вспышку сочной и неоновой */
+}
 
 
 
