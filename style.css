@@ -1,172 +1,831 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MARTy ИЗБУШКА ДАББЕРА | Anime Dubbing</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Подключаем аниме-шрифт с Google Fonts -->
-    <link href="https://googleapis.com" rel="stylesheet">
-</head>
-<body>
+/* Общие настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
 
-    <!-- Шапка сайта -->
-    <header>
-        <div class="logo">MARTy // <span>ИЗБУШКА ДАББЕРА</span></div>
-        <nav>
-            <a href="#about">Обо мне</a>
-            <a href="#works">Работы</a>
-            <a href="#blog">Блог</a>
-            <a href="#contacts" class="btn-contact">Связаться</a>
-        </nav>
-    </header>
-
-           <!-- Главный экран (Hero) -->
-    <section id="about" class="hero">
-        
-        <!-- ЖИВОЙ КОСМОС НА ЗАДНЕМ ПЛАНЕ (БЕЗ ЗВУКА И В ПОВТОРЕ) -->
-        <video autoplay muted loop playsinline class="hero-video-bg">
-            <source src="space-bg.mp4" type="video/mp4">
-        </video>
-
-        <!-- Летающие частицы портала (15 штук) -->
-        <div class="portal-particle p1"></div>
-        <div class="portal-particle p2"></div>
-        <div class="portal-particle p3"></div>
-        <div class="portal-particle p4"></div>
-        <div class="portal-particle p5"></div>
-        <div class="portal-particle p6"></div>
-        <div class="portal-particle p7"></div>
-        <div class="portal-particle p8"></div>
-        <div class="portal-particle p9"></div>
-        <div class="portal-particle p10"></div>
-        <div class="portal-particle p11"></div>
-        <div class="portal-particle p12"></div>
-        <div class="portal-particle p13"></div>
-        <div class="portal-particle p14"></div>
-        <div class="portal-particle p15"></div>
-
-         <div class="hero-content">
-         <span class="badge">Любительская озвучка</span>
-            
-         <!-- ИДЕАЛЬНЫЙ ТАНДЕМ: ТЕКСТ И ПЛАЗМА ВМЕСТЕ -->
-<h1 class="glitch-text-final">
-    <img src="text-glow.png" alt="Радиация" class="plasma-bg-layer-final">
-    Озвучиваю <br><span class="highlight">Сердцем</span>
-</h1>
-            <p class="hero-description">Добро пожаловать в мой блог актёра дубляжа и закадра. Даю жизнь персонажам аниме, игр и фильмов, дающих жизнь героям, созданных для погружения в новые миры. Послушайте мои демо-записи ниже!</p>
-            <a href="#works" class="cta-btn anime-btn">Слушать Демо</a>
-        </div>
+:root {
+    --bg-color: #06090e;        /* Более глубокий, сочный темный фон */
+    --card-bg: #121820;         /* Фон для карточек и постов */
+    --accent-neon: #39ff14;     /* Ярко-зеленый неон (как на аватаре) */
+    --accent-blue: #00f0ff;     /* Голубой киберпанк/аниме неон */
+    --text-color: #a3e635;      /* Салатовый цвет для акцентного текста */
+    --text-white: #ffffff;      /* Белый цвет для обычных букв */
+}
 
 
-                <div class="hero-image">
-            <div class="avatar-container">
-                <!-- Заменили картинку на зацикленный бесшумный видеоплеер -->
-                <video autoplay muted loop playsinline class="anime-avatar">
-                    <source src="avatar.mp4" type="video/mp4">
-                </video>
-                <div class="lightning-aura"></div>
-            </div>
-        </div>
+body {
+    background-color: var(--bg-color);
+    color: var(--text-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
 
-    </section>
+/* Шапка сайта */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: rgba(11, 12, 16, 0.9);
+    position: relative; /* ИСПРАВЛЕНО: теперь шапка остается на месте и не едет вниз */
+    z-index: 100;
+    border-bottom: 2px solid var(--accent-neon);
+}
 
-<!-- Специальный SVG-код для генерации ломаных линий молнии (вставьте сразу под hero-image) -->
-<svg style="position: absolute; width: 0; height: 0;">
-    <filter id="anime-lightning">
-        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="4" result="noise" />
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="30" xChannelSelector="R" yChannelSelector="G" />
-    </filter>
-</svg>
 
-    </section>
+.logo {
+    font-family: 'Comfortaa', cursive;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
 
-    <!-- Секция с работами (Портфолио) -->
-    <section id="works" class="works">
-        <h2 class="section-title">Пример <span>Работ</span></h2>
-        <div class="grid">
-                        <!-- Карточка 1 -->
-            <div class="card">
-                <div class="card-tag">Сериал</div>
-                <h3>Твердыня</h3>
-                <p>Пример голоса для сериалов.</p>
-                <!-- Видео-плеер для Твердыня -->
-                <video controls style="width: 100%; border-radius: 8px; margin-top: 15px;">
-                    <source src="patriot.mp4" type="video/mp4">
-                    Ваш браузер не поддерживает видео.
-                </video>
-            </div>
+.logo span {
+    color: var(--accent-neon);
+    text-shadow: 0 0 10px var(--accent-neon);
+}
 
-            <!-- Карточка 2 -->
-            <div class="card">
-                <div class="card-tag">Игры / Шутеры</div>
-                <h3>Крысавчик (Overwatch)</h3>
-                <p>Пример эксцентричной, безумной и комедийной озвучки персонажа.</p>
-                <!-- Видео-плеер для Крысавчика -->
-                <video controls style="width: 100%; border-radius: 8px; margin-top: 15px;">
-                    <source src="junkrat.mp4" type="video/mp4">
-                    Ваш браузер не поддерживает видео.
-                </video>
-            </div>
-            <!-- Карточка 3 -->
-            <div class="card">
-                <div class="card-tag">Фильм</div>
-                <h3>Капитан Джек Воробей/Уил Тёрнер</h3>
-                <p>Сцена в темнице.</p>
-                <!-- Видео-плеер для Пираты -->
-                <video controls style="width: 100%; border-radius: 8px; margin-top: 15px;">
-                    <source src="pirati.mp4" type="video/mp4">
-                    Ваш браузер не поддерживает видео.
-                </video>
-            </div>
-        </div>
-    </section>
+nav a {
+    color: var(--text-white);
+    text-decoration: none;
+    margin-left: 20px;
+    transition: 0.3s;
+}
 
-    <!-- Секция Блога -->
-    <section id="blog" class="blog">
-        <h2 class="section-title">Закулисье <span>Блога</span></h2>
-        <div class="grid">
-                        <!-- Пост 1 -->
-            <article class="post">
-                <div class="post-date">12 Авг 2026</div>
-                <h3>Как я пришёл к озвучке</h3>
-                <p>Проекты в которых участвовал</p>
-                <a href="post1.html" class="read-more">Читать далее →</a> <!-- Обновили ссылку -->
-            </article>
+nav a:hover {
+    color: var(--accent-blue);
+}
 
-            <!-- Пост 2 -->
-            <article class="post">
-                <div class="post-date">05 Авг 2026</div>
-                <h3>Моё оборудование</h3>
-                <p>Рассказываю, на какое оборудование пишу дома и как добиться студийного качества в обычной комнате.</p>
-                <a href="post2.html" class="read-more">Читать далее →</a> <!-- Заменили # на post2.html -->
-            </article>
-</div> <!-- Закрываем сетку блога -->
-    </section> <!-- Закрываем секцию блога -->
+.btn-contact {
+    border: 2px solid var(--accent-blue);
+    padding: 8px 16px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
 
-<!-- Подвал и Контакты -->
-    <footer id="contacts">
-        <h2>Готовы к сотрудничеству?</h2>
-        <p>Пишите для коммерческих предложений, фандаб-проектов и коллабораций.</p>
-        <div class="socials">
-            <a href="https://t.me/higina_dub" target="_blank">Telegram</a>
-            <a href="https://www.youtube.com/@Higina_Ozvu4atora" target="_blank">YouTube</a>
-            <a href="https://share.google/8WrAOcAzuA7xno9Zu" target="_blank">Фандаб Wiki</a>
-        </div>
-        <p class="copy">&copy; 2026 MARTY // ИЗБУШКА ДАББЕРА. Стиль вдохновлен Аниме.</p>
-    </footer>
-<!-- Скрытый плеер для эффекта клика -->
-    <audio id="click-sound" src="rickandmor_rdr0da12.mp3" preload="auto"></audio>
+.btn-contact:hover {
+    background: var(--accent-blue);
+    color: var(--bg-color);
+}
 
-    <!-- Скрипт, который включает звук при нажатии на аватар -->
-    <script>
-        const avatar = document.querySelector('.anime-avatar');
-        const sound = document.getElementById('click-sound');
+/* Главный экран */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Центрирует всю группу элементов */
+    gap: 100px;              /* Идеальное расстояние между текстом и аватаркой */
+    padding: 80px 8%;
+    min-height: 85vh;
+    position: relative;
+    overflow: hidden;
+}
 
-        avatar.addEventListener('mousedown', () => {
-            sound.currentTime = 0; // Сбрасываем звук на начало, чтобы можно было кликать часто
-            sound.play();          // Запускаем воспроизведение
-        });
-    </script>
-</body>
-</html>
+
+.hero-content {
+    max-width: 550px;
+}
+
+.badge {
+    background: var(--accent-neon);
+    padding: 5px 12px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 3px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    animation: permanent-glitch 2s infinite linear; /* ДОБАВИЛИ ЭТУ СТРОЧКУ */
+}
+
+
+.highlight {
+    color: var(--accent-blue);
+    text-shadow: 0 0 15px var(--accent-blue);
+}
+
+.hero p {
+    color: #a4b3c6;
+    margin-bottom: 30px;
+}
+
+.cta-btn {
+    display: inline-block;
+    background: transparent;
+    color: var(--text-white);
+    border: 2px solid var(--accent-neon);
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background: var(--accent-neon);
+    transform: translateY(-3px);
+}
+
+.avatar-placeholder {
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(45deg, var(--card-bg), #2c3b4e);
+    border: 4px dashed var(--accent-blue);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-blue);
+    font-weight: bold;
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
+}
+
+/* Секции общие */
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.section-title span {
+    color: var(--accent-neon);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 0 8%;
+}
+
+/* Секция Работы (Аудио) */
+.works {
+    padding: 80px 0;
+    background: #11141a;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 25px;
+    border-left: 5px solid var(--accent-blue);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 240, 255, 0.1);
+}
+
+.card-tag {
+    font-size: 11px;
+    color: var(--accent-blue);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Блог */
+.blog {
+    padding: 80px 0;
+}
+
+.post {
+    background: #161b22;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #30363d;
+}
+
+.post-date {
+    font-size: 12px;
+    color: var(--accent-neon);
+    margin-bottom: 10px;
+}
+
+.post h3 {
+    margin-bottom: 15px;
+}
+
+.post p {
+    color: #8b949e;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.read-more {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Подвал */
+footer {
+    background: #050508;
+    text-align: center;
+    padding: 60px 20px;
+    border-top: 1px solid #1f2833;
+}
+
+footer h2 {
+    margin-bottom: 10px;
+    color: var(--accent-blue);
+}
+
+.socials {
+    margin: 25px 0;
+}
+
+.socials a {
+    color: var(--text-white);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    border-bottom: 2px solid var(--accent-neon);
+    padding-bottom: 3px;
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    color: var(--accent-neon);
+}
+
+.copy {
+    font-size: 12px;
+    color: #4b5563;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    header { 
+        flex-direction: column; 
+        gap: 10px; 
+        padding: 15px 4%;
+        text-align: center;
+    }
+    .logo {
+        font-size: 18px; /* Уменьшили размер логотипа для мобилок */
+        line-height: 1.3;
+    }
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    nav a { 
+        margin: 0 5px; 
+        font-size: 14px;
+    }
+    .btn-contact {
+        padding: 4px 10px; /* Сделали кнопку «Связаться» чуть компактнее */
+    }
+    .hero { 
+        flex-direction: column-reverse; 
+        text-align: center; 
+        gap: 40px; 
+        padding: 40px 4%;
+    }
+    .hero h1 { font-size: 32px; }
+    .avatar-placeholder, .anime-avatar { width: 260px; height: 260px; }
+        .plasma-bg-layer {
+        width: 100% !important;
+        max-width: 400px !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+    }
+
+}
+
+/* ОБНОВЛЕННЫЙ ЖИВОЙ ВИДЕО-АВАТАР */
+.anime-avatar {
+    width: 320px !important;
+    height: 320px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important; /* Намертво обрезаем квадратное видео в идеальный круг */
+    border: 4px solid #39ff14 !important;
+    box-shadow: 0 0 25px #39ff14 !important;
+    transition: all 0.2s ease !important;
+    flex-shrink: 0 !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    animation: none !important; /* УБРАЛИ СТАРЕЙШЕЕ ВРАЩЕНИЕ CSS */
+}
+
+/* Эффект при наведении — просто усиливаем неоновое свечение */
+.anime-avatar:hover {
+    box-shadow: 0 0 45px #39ff14, 0 0 70px rgba(57, 255, 20, 0.5) !important;
+}
+
+/* Эффект при клике (сохраняем сжатие и яростную неоновую вспышку) */
+.anime-avatar:active {
+    transform: scale(0.95) !important;
+    box-shadow: 0 0 80px #39ff14, 0 0 150px #00f0ff !important;
+}
+
+/* На всякий случай убираем стандартное выделение ссылки вокруг аватара */
+.avatar-link {
+    text-decoration: none;
+    display: inline-block;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Эффект при наведении */
+.anime-avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px #39ff14;
+}
+/*
+video {
+    max-height: 200px;
+    object-fit: cover; /* Видео аккуратно впишется в карточку */
+    background: #000;  /* Черный фон плеера до начала воспроизведения */
+}
+/* Контейнер для позиционирования эффектов */
+.avatar-container {
+    position: relative;
+    display: inline-block;
+}
+/* Контейнер для позиционирования */
+.avatar-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Новая электрическая аура вокруг аватара */
+.lightning-aura {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 6px double #39ff14; /* Двойная зеленая линия */
+    border-radius: 50%;
+    opacity: 0; /* В обычном состоянии скрыта */
+    pointer-events: none;
+    transition: opacity 0.1s ease;
+}
+
+/* ЭФФЕКТ ПРИ КЛИКЕ */
+.avatar-container:active .lightning-aura {
+    opacity: 1; /* Проявляется мгновенно */
+    filter: url(#anime-lightning); /* Применяем фильтр ломаных линий */
+    box-shadow: 0 0 30px #39ff14, 0 0 60px #00f0ff, inset 0 0 20px #39ff14;
+    animation: lightning-shock 0.15s infinite linear; /* Заставляем молнии бешено дергаться */
+}
+
+/* Анимация хаотичного подергивания электричества */
+@keyframes lightning-shock {
+    0% { transform: scale(1) rotate(0deg); opacity: 0.9; }
+    20% { transform: scale(1.04) rotate(90deg); opacity: 1; }
+    40% { transform: scale(0.98) rotate(180deg); opacity: 0.8; }
+    60% { transform: scale(1.05) rotate(270deg); opacity: 1; }
+    80% { transform: scale(0.95) rotate(45deg); opacity: 0.9; }
+    100% { transform: scale(1.02) rotate(360deg); opacity: 1; }
+}
+/* ==========================================================================
+   СТИЛИСТИКА РИКА И МОРТИ: АНИМАЦИИ И ИНТЕРАКТИВ
+   ========================================================================== */
+
+/* Настройка фона главного экрана для летающих частиц */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Базовый класс для искр */
+.portal-particle {
+    position: absolute;
+    background: radial-gradient(circle, rgba(57,255,20,0.8) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1; /* Чтобы частицы летали за текстом и аватаром, не мешая кликам */
+    animation: float-around infinite ease-in-out;
+}
+
+/* Разные размеры и траектории для каждой искры */
+.p1 { width: 40px; height: 40px; top: 20%; left: 10%; animation-duration: 8s; }
+.p2 { width: 25px; height: 25px; top: 70%; left: 15%; animation-duration: 6s; animation-delay: 1s; }
+.p3 { width: 50px; height: 50px; top: 15%; left: 45%; animation-duration: 10s; animation-delay: 2s; }
+.p4 { width: 30px; height: 30px; top: 80%; left: 52%; animation-duration: 7s; }
+.p5 { width: 20px; height: 20px; top: 40%; left: 85%; animation-duration: 5s; animation-delay: 3s; }
+
+/* Анимация хаотичного парения частиц */
+@keyframes float-around {
+    0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.2; }
+    50% { transform: translateY(-60px) translateX(30px) scale(1.4); opacity: 0.8; }
+    100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.2; }
+}
+
+/* Постоянный глитч-эффект для главного заголовка */
+.glitch-text {
+    animation: permanent-glitch 3s infinite linear;
+    position: relative;
+    cursor: default;
+}
+
+/* Анимация хаотичного цифрового сбоя (срабатывает рывками, как настоящий глитч) */
+@keyframes permanent-glitch {
+    0%, 94%, 100% { 
+        text-shadow: none; 
+        transform: skew(0deg); 
+    }
+    95% { 
+        text-shadow: 3px -2px 0 #00f0ff, -3px 2px 0 #39ff14; 
+        transform: skew(-3deg); 
+    }
+    96% { 
+        text-shadow: -3px 3px 0 #00f0ff, 3px -1px 0 #39ff14; 
+        transform: skew(3deg); 
+    }
+    97% { 
+        text-shadow: 4px 1px 0 #00f0ff, -4px -3px 0 #39ff14; 
+        transform: skew(-1deg); 
+    }
+    98% { 
+        text-shadow: -2px -3px 0 #00f0ff, 2px 3px 0 #39ff14; 
+        transform: skew(2deg); 
+    }
+    99% { 
+        text-shadow: 3px -1px 0 #00f0ff, -2px 2px 0 #39ff14; 
+        transform: skew(0deg); 
+    }
+}
+
+/* Космическая пульсирующая кнопка «Слушать Демо» */
+.anime-btn {
+    border: 2px solid #39ff14 !important;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.4) !important;
+    background: transparent;
+    transition: all 0.3s ease; /* ОПЕЧАТКА ИСПРАВЛЕНА ТУТ */
+    animation: btn-pulse 2s infinite !important;
+}
+
+.anime-btn:hover {
+    background: #39ff14 !important;
+    color: #06090e !important;
+    box-shadow: 0 0 30px #39ff14, 0 0 50px #00f0ff !important;
+    transform: translateY(-3px) scale(1.03);
+}
+
+@keyframes btn-pulse {
+    0% { box-shadow: 0 0 15px rgba(57, 255, 20, 0.4); }
+    50% { box-shadow: 0 0 25px #39ff14, 0 0 35px rgba(0, 240, 255, 0.6); }
+    100% { box-shadow: 0 0 15px rgba(57, 255, 20, 0.4); }
+}
+/* ПРИНУДИТЕЛЬНОЕ ВЫРАВНИВАНИЕ ГЛАВНОГО ЭКРАНА */
+.hero {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 80px !important;
+    padding: 80px 8% !important;
+    min-height: 85vh !important;
+}
+
+/* Расширяем блок контента, чтобы текст не сжимался */
+.hero-content {
+    max-width: 600px !important;
+    flex-shrink: 0 !important;
+}
+
+/* Настройка шрифта для описания */
+.hero-description {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    color: #a4b3c6 !important;
+    margin-bottom: 30px !important;
+    white-space: normal !important; /* Разрешает тексту переноситься на новые строки */
+}
+
+/* Фиксируем аватарку справа, чтобы она не уезжала */
+.hero-image {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+}
+/* ==========================================================================
+   ФИНАЛЬНЫЕ ВИЗУАЛЬНЫЕ УЛУЧШЕНИЯ
+   ========================================================================== */
+
+/* 1. Эффектное неоновое свечение и контрастная обводка для плашки */
+.badge {
+    background: var(--accent-neon) !important;
+    color: #ffffff !important;
+    font-weight: 800 !important; /* Сделали буквы более жирными */
+    letter-spacing: 1px !important; /* Немного раздвинули буквы для читаемости */
+    box-shadow: 0 0 15px var(--accent-neon), 0 0 30px rgba(57, 255, 20, 0.4) !important;
+    
+    /* Добавляем жирную черную обводку для букв */
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000,
+         0px  2px 4px rgba(0, 0, 0, 0.8) !important; 
+         
+    transition: 0.3s ease;
+}
+
+/* 2. Красивое подчеркивание ссылок в меню при наведении */
+nav a {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-blue);
+    box-shadow: 0 0 8px var(--accent-blue);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%; /* Линия будет красиво выезжать слева направо */
+}
+
+/* 3. Интерактив для карточек с вашими работами и блогом */
+.card, .post {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, border-color 0.3s ease !important;
+}
+
+.card:hover, .post:hover {
+    transform: translateY(-8px) scale(1.02) !important; /* Карточка слегка приподнимается и увеличивается */
+    border-color: var(--accent-neon) !important; /* Рамка подсвечивается зеленым */
+    box-shadow: 0 15px 30px rgba(57, 255, 20, 0.2) !important; /* Появляется мягкая неоновая тень снизу */
+}
+/* ПРИНУДИТЕЛЬНОЕ ДОБАВЛЕНИЕ ОСТАЛЬНЫХ ЧАСТИЦ (6-15) */
+.p6 { width: 35px !important; height: 35px !important; top: 60% !important; left: 25% !important; animation-duration: 9s !important; }
+.p7 { width: 15px !important; height: 15px !important; top: 25% !important; left: 22% !important; animation-duration: 4s !important; }
+.p8 { width: 45px !important; height: 45px !important; top: 70% !important; left: 70% !important; animation-duration: 12s !important; }
+.p9 { width: 25px !important; height: 25px !important; top: 10% !important; left: 75% !important; animation-duration: 6s !important; }
+.p10 { width: 30px !important; height: 30px !important; top: 50% !important; left: 5% !important; animation-duration: 8s !important; }
+.p11 { width: 55px !important; height: 55px !important; top: 80% !important; left: 82% !important; animation-duration: 14s !important; }
+.p12 { width: 20px !important; height: 20px !important; top: 45% !important; left: 40% !important; animation-duration: 5s !important; }
+.p13 { width: 35px !important; height: 35px !important; top: 5% !important; left: 55% !important; animation-duration: 10s !important; }
+.p14 { width: 22px !important; height: 22px !important; top: 90% !important; left: 28% !important; animation-duration: 7s !important; }
+.p15 { width: 40px !important; height: 40px !important; top: 55% !important; left: 92% !important; animation-duration: 9s !important; }
+/* ПОЗИЦИОНИРОВАНИЕ И АНИМАЦИЯ РАДИОАКТИВНОЙ ПЛАЗМЫ */
+.glitch-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* Накладываем плазму ровно под/вокруг текста */
+.radioactive-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%; /* Слегка шире текста, чтобы языки плазмы торчали по бокам */
+    height: auto;
+    z-index: -1; /* Уводим за текст, чтобы буквы читались */
+    pointer-events: none;
+    
+    /* Запускаем постоянную пульсацию радиации */
+    animation: radioactive-pulse 3s infinite ease-in-out;
+}
+
+/* Эффект цикличного радиоактивного свечения и дыхания */
+@keyframes radioactive-pulse {
+    0% {
+        opacity: 0.6;
+        filter: drop-shadow(0 0 10px #39ff14) hue-rotate(0deg);
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 1;
+        /* В пике анимации неон взрывается яркостью и слегка меняет оттенок */
+        filter: drop-shadow(0 0 35px #39ff14) drop-shadow(0 0 60px #00f0ff) hue-rotate(10deg);
+        transform: translate(-50%, -52%) scale(1.04); /* Легкое покачивание вверх */
+    }
+    100% {
+        opacity: 0.6;
+        filter: drop-shadow(0 0 10px #39ff14) hue-rotate(0deg);
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+/* ==========================================================================
+   ФИНАЛЬНЫЙ СВЕРХНАДЕЖНЫЙ БЛОК ДЛЯ РАДИОАКТИВНОЙ ПЛАЗМЫ
+   ========================================================================== */
+
+/* Настройка самого заголовка */
+.glitch-text-final {
+    position: relative !important;
+    display: block !important;
+    font-size: 48px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 25px !important;
+    animation: permanent-glitch 2s infinite linear !important; /* Наш глитч */
+    z-index: 2 !important;
+    width: fit-content !important; /* Сжимает блок строго под размер текста */
+}
+
+/* Настройка плазмы под текстом */
+.plasma-bg-layer-final {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important; /* Идеальный центр */
+    
+    /* РАЗМЕР ПОД БУКВЫ */
+    width: 550px !important; 
+    height: auto !important;
+    max-width: none !important;
+    
+    z-index: -1 !important; /* Уходит строго под буквы */
+    pointer-events: none !important;
+    user-select: none !important;
+    
+    animation: radioactive-plasma-final 2.5s infinite ease-in-out !important;
+}
+
+/* Пульсация зеленой радиации */
+@keyframes radioactive-plasma-final {
+    0% {
+        opacity: 0.6;
+        filter: drop-shadow(0 0 15px #39ff14) drop-shadow(0 0 30px rgba(57, 255, 20, 0.4));
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 1;
+        filter: drop-shadow(0 0 35px #39ff14) drop-shadow(0 0 65px #00f0ff);
+        transform: translate(-50%, -48%) scale(1.03); /* Мягкое покачивание */
+    }
+    100% {
+        opacity: 0.6;
+        filter: drop-shadow(0 0 15px #39ff14) drop-shadow(0 0 30px rgba(57, 255, 20, 0.4));
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+    /* АДАПТАЦИЯ СТРОГО ПОД МОБИЛЬНЫЕ СМАРТФОНЫ */
+@media (max-width: 768px) {
+    .super-title-box { 
+        display: block !important; 
+        text-align: center !important; 
+        width: 100% !important; 
+    }
+    
+    .super-glitch-text { 
+        font-size: 34px !important; 
+        margin: 0 auto !important; 
+    }
+    
+    /* Делаем плазму на телефонах большой и центрируем */
+    .super-plasma-bg { 
+        width: 480px !important; 
+        max-width: 140% !important; 
+        top: 50% !important; 
+        left: 50% !important; 
+        transform: translate(-50%, -50%) !important; 
+    }
+    
+    /* НЕПРОБИВАЕМЫЙ КРУГ ДЛЯ ВИДЕО НА СМАРТФОНАХ */
+    .super-avatar-mask {
+        width: 260px !important;
+        height: 260px !important;
+        border-radius: 50% !important;
+        overflow: hidden !important;
+        position: relative !important;
+        -webkit-mask-image: -webkit-radial-gradient(white, black) !important;
+        mask-image: radial-gradient(white, black) !important;
+        -webkit-transform: translate3d(0, 0, 0) !important;
+        transform: translate3d(0, 0, 0) !important;
+        border: 4px solid #39ff14 !important;
+        animation: portal-aura-pulse 2s infinite ease-in-out !important;
+    }
+
+    /* Принудительное скругление самого видео внутри маски */
+    .super-video-avatar {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        border-radius: 50% !important;
+        -webkit-border-radius: 50% !important;
+    }
+}
+
+
+    /* ИДЕАЛЬНАЯ ПОДГОНКА ПЛАЗМЫ НА ТЕЛЕФОНАХ */
+    .super-plasma-bg {
+        width: 460px !important; /* Оптимальный размер, чтобы не пережимать буквы */
+        max-width: 140% !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important; /* Жесткая центровка по центру текста */
+    }
+
+/* ПРИНУДИТЕЛЬНЫЙ ФИКС ДЛЯ СЕКЦИИ HERO */
+.hero {
+    position: relative !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important; /* Центрирует всю группу по центру экрана */
+    gap: 60px !important; /* Уменьшили расстояние, чтобы сблизить текст и аватарку */
+    padding: 80px 8% !important;
+    min-height: 85vh !important;
+}
+
+/* ИСПРАВЛЕННЫЙ ВИДЕО-ФОН */
+.hero-video-bg {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    z-index: 1 !important;        
+    pointer-events: none !important;
+    opacity: 0.55 !important;     
+}
+
+/* ЖЕСТКАЯ ФИКСАЦИЯ БЛОКА С ТЕКСТОМ */
+.hero-content {
+    max-width: 480px !important; /* Ограничили ширину текста, чтобы он не размазывался */
+    width: 100% !important;
+    flex-shrink: 0 !important;
+    text-align: left !important;
+    position: relative !important;
+    z-index: 5 !important;
+}
+
+/* ЖЕСТКАЯ ФИКСАЦИЯ АВАТАРКИ */
+.hero-image {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+    position: relative !important;
+    z-index: 5 !important;
+}
+
+/* Принудительно поднимаем искры */
+.portal-particle {
+    position: absolute !important;
+    z-index: 2 !important; /* Частицы летают ПЕРЕД видео, но ЗА текстом */
+}
+/* ПОСТОЯННАЯ БУШУЮЩАЯ РАМКА ПОРТАЛА ВОКРУГ АВАТАРА */
+.super-avatar-mask {
+    position: relative !important;
+    /* Запускаем постоянную пульсацию и свечение портала */
+    animation: portal-aura-pulse 2s infinite ease-in-out !important;
+}
+
+/* Анимация стабильного, но мощного радиоактивного свечения вокруг круга */
+@keyframes portal-aura-pulse {
+    0% {
+        box-shadow: 0 0 20px #39ff14, 0 0 35px rgba(57, 255, 20, 0.4) !important;
+        border-color: #39ff14 !important;
+    }
+    50% {
+        /* В пике рамка взрывается яркостью и добавляет голубые молнии из сериала */
+        box-shadow: 0 0 40px #39ff14, 0 0 75px #00f0ff, inset 0 0 20px rgba(57, 255, 20, 0.6) !important;
+        border-color: #00f0ff !important; /* Рамка слегка синеет от напряжения */
+    }
+    100% {
+        box-shadow: 0 0 20px #39ff14, 0 0 35px rgba(57, 255, 20, 0.4) !important;
+        border-color: #39ff14 !important;
+    }
+}    /* Фикс сочного свечения портала на экранах телефонов */
+    .super-avatar-mask {
+        animation: portal-aura-pulse 2s infinite ease-in-out !important;
+        border: 4px solid #39ff14 !important;
+    }
+
+
+
