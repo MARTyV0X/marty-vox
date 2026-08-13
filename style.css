@@ -784,6 +784,48 @@ nav a:hover::after {
         transform: scale(1.03);
     }
 }
+/* ПРИНУДИТЕЛЬНОЕ ЦЕНТРИРОВАНИЕ ГЛАВНОГО ЭКРАНА НА ПК */
+.hero {
+    position: relative !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important; /* Центрирует всю группу по середине экрана */
+    gap: 80px !important;              /* Идеальное расстояние между текстом и аватаркой */
+    padding: 80px 8% !important;
+    min-height: 85vh !important;
+    width: 100% !important;
+}
+
+/* Фиксация блока текста слева */
+.hero-content {
+    max-width: 480px !important;
+    width: 100% !important;
+    flex-shrink: 0 !important;
+    text-align: left !important;
+    margin: 0 !important;
+    position: relative !important;
+    z-index: 5 !important;
+}
+
+/* Фиксация блока аватарки справа */
+.hero-image {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+    position: relative !important;
+    z-index: 5 !important;
+}
+
+/* Принудительное скругление самого видео внутри маски на ПК */
+.super-video-avatar {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+}
 
 
     
