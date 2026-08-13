@@ -753,6 +753,29 @@ nav a:hover::after {
     position: absolute !important;
     z-index: 2 !important; /* Частицы летают ПЕРЕД видео, но ЗА текстом */
 }
+/* ПОСТОЯННАЯ БУШУЮЩАЯ РАМКА ПОРТАЛА ВОКРУГ АВАТАРА */
+.super-avatar-mask {
+    position: relative !important;
+    /* Запускаем постоянную пульсацию и свечение портала */
+    animation: portal-aura-pulse 2s infinite ease-in-out !important;
+}
+
+/* Анимация стабильного, но мощного радиоактивного свечения вокруг круга */
+@keyframes portal-aura-pulse {
+    0% {
+        box-shadow: 0 0 20px #39ff14, 0 0 35px rgba(57, 255, 20, 0.4) !important;
+        border-color: #39ff14 !important;
+    }
+    50% {
+        /* В пике рамка взрывается яркостью и добавляет голубые молнии из сериала */
+        box-shadow: 0 0 40px #39ff14, 0 0 75px #00f0ff, inset 0 0 20px rgba(57, 255, 20, 0.6) !important;
+        border-color: #00f0ff !important; /* Рамка слегка синеет от напряжения */
+    }
+    100% {
+        box-shadow: 0 0 20px #39ff14, 0 0 35px rgba(57, 255, 20, 0.4) !important;
+        border-color: #39ff14 !important;
+    }
+}
 
 
 
