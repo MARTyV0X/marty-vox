@@ -701,25 +701,33 @@ nav a:hover::after {
     }
 }
 
-/* Адаптация под мобильные телефоны */
+/* ЧЕТКАЯ АДАПТАЦИЯ СТРОГО ПОД МОБИЛЬНЫЕ ТЕЛЕФОНЫ */
 @media (max-width: 768px) {
     .glitch-text-final {
-        font-size: 32px !important;
-        margin: 0 auto 20px auto !important; /* Центрируем текст на мобилках */
-    }
-    .plasma-bg-layer-final {
+        font-size: 34px !important;
+        margin: 0 auto 25px auto !important;
+        text-align: center !important;
         width: 100% !important;
-        max-width: 380px !important;
+        display: block !important;
+    }
+    
+    .plasma-bg-layer-final {
+        width: 480px !important; /* На телефонах делаем её оптимального размера под экран */
+        max-width: 130% !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
     }
 }
+
 /* ПРИНУДИТЕЛЬНЫЙ ФИКС ДЛЯ СЕКЦИИ HERO */
 .hero {
     position: relative !important;
     overflow: hidden !important;
     display: flex !important;
     align-items: center !important;
-    justify-content: center !important; /* Центрирует всю группу по центру экрана */
-    gap: 60px !important; /* Уменьшили расстояние, чтобы сблизить текст и аватарку */
+    justify-content: center !important;
+    gap: 60px !important;
     padding: 80px 8% !important;
     min-height: 85vh !important;
 }
@@ -738,22 +746,26 @@ nav a:hover::after {
     opacity: 0.55 !important;     
 }
 
-/* ЖЕСТКАЯ ФИКСАЦИЯ БЛОКА С ТЕКСТОМ */
+/* ЖЕСТКАЯ ФИКСАЦИЯ БЛОКА С ТЕКСТОМ (СДВИГ ВЛЕВО) */
 .hero-content {
-    max-width: 480px !important; /* Ограничили ширину текста, чтобы он не размазывался */
+    max-width: 480px !important;
     width: 100% !important;
     flex-shrink: 0 !important;
     text-align: left !important;
+    margin-left: 0 !important;   
+    margin-right: 0 !important;
     position: relative !important;
     z-index: 5 !important;
 }
 
-/* ЖЕСТКАЯ ФИКСАЦИЯ АВАТАРКИ */
+/* ЖЕСТКАЯ ФИКСАЦИЯ АВАТАРКИ (СДВИГ БЛИЖЕ К ЦЕНТРУ) */
 .hero-image {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
     flex-shrink: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;   
     position: relative !important;
     z-index: 5 !important;
 }
@@ -761,9 +773,7 @@ nav a:hover::after {
 /* Принудительно поднимаем искры */
 .portal-particle {
     position: absolute !important;
-    z-index: 2 !important; /* Частицы летают ПЕРЕД видео, но ЗА текстом */
+    z-index: 2 !important; 
 }
-
-
 
 
