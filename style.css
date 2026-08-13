@@ -738,12 +738,24 @@ nav a:hover::after {
     }
 }
 /* ==========================================================================
-   ПОСТОЯННАЯ БУШУЮЩАЯ ЭНЕРГИЯ ПОРТАЛА (БЕЗ УЧАСТИЯ КЛИКОВ)
+   ФИНАЛЬНЫЙ НАДЁЖНЫЙ БЛОК ДЛЯ КРУГЛОГО АВАТАРА НА ПК И МОБИЛЬНЫХ
    ========================================================================== */
 
-/* Контейнер аватара держит круглую форму и пульсирует зеленым неон-порталом */
+/* Контейнер аватара на ПК: ЖЕСТКО задаем круглые размеры */
 .super-avatar-mask {
     position: relative !important;
+    width: 320px !important;   /* Вернули идеальный размер для компьютеров */
+    height: 320px !important;  /* Вернули идеальный размер для компьютеров */
+    border-radius: 50% !important; /* Намертво заперли в круг на ПК */
+    overflow: hidden !important;
+    border: 4px solid #39ff14 !important;
+    flex-shrink: 0 !important;
+    
+    /* Фиксы маски, чтобы видео не вылетало */
+    -webkit-mask-image: -webkit-radial-gradient(white, black) !important;
+    mask-image: radial-gradient(white, black) !important;
+    
+    /* Наша постоянная плавная пульсация портала */
     animation: permanent-portal-glow 2.5s infinite ease-in-out !important;
 }
 
@@ -784,6 +796,7 @@ nav a:hover::after {
         transform: scale(1.03);
     }
 }
+
 
 
     
