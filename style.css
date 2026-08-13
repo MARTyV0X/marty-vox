@@ -691,17 +691,42 @@ nav a:hover::after {
     }
 }
 
-/* Адаптация под мобильные телефоны */
-@media (max-width: 768px) {
-    .glitch-text-final {
-        font-size: 32px !important;
-        margin: 0 auto 20px auto !important; /* Центрируем текст на мобилках */
+    /* НЕПРОБИВАЕМЫЙ КРУГ ДЛЯ ВИДЕО НА СМАРТФОНАХ */
+    .super-avatar-mask {
+        width: 260px !important;
+        height: 260px !important;
+        border-radius: 50% !important;
+        overflow: hidden !important;
+        position: relative !important;
+        
+        /* Жесткие маски для мобильных движков Chrome/Webkit/Safari */
+        -webkit-mask-image: -webkit-radial-gradient(white, black) !important;
+        mask-image: radial-gradient(white, black) !important;
+        -webkit-transform: translate3d(0, 0, 0) !important;
+        transform: translate3d(0, 0, 0) !important;
+        
+        border: 4px solid #39ff14 !important;
+        animation: portal-aura-pulse 2s infinite ease-in-out !important;
     }
-    .plasma-bg-layer-final {
+
+    /* Принудительное скругление самого видео внутри маски */
+    .super-video-avatar {
         width: 100% !important;
-        max-width: 380px !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        border-radius: 50% !important;
+        -webkit-border-radius: 50% !important;
     }
-}
+
+    /* ИДЕАЛЬНАЯ ПОДГОНКА ПЛАЗМЫ НА ТЕЛЕФОНАХ */
+    .super-plasma-bg {
+        width: 460px !important; /* Оптимальный размер, чтобы не пережимать буквы */
+        max-width: 140% !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important; /* Жесткая центровка по центру текста */
+    }
+
 /* ПРИНУДИТЕЛЬНЫЙ ФИКС ДЛЯ СЕКЦИИ HERO */
 .hero {
     position: relative !important;
