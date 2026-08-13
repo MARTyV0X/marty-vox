@@ -724,7 +724,17 @@ nav a:hover::after {
         left: 50% !important;
         transform: translate(-50%, -50%) !important; /* Удерживаем идеальный中心 за текстом */
     }
-}
+        /* ЦЕНТРИРУЕМ ТЕКСТ ОПИСАНИЯ НА ТЕЛЕФОНАХ */
+    .hero-description {
+        text-align: center !important; /* Буквы встанут по центру */
+        margin: 0 auto 30px auto !important; /* Выравниваем сам блок посередине */
+    }
+    
+    /* ЦЕНТРИРУЕМ КНОПКУ НА ТЕЛЕФОНАХ */
+    .cta-btn {
+        display: table !important; /* Удерживает кнопку компактной */
+        margin: 0 auto !important;   /* Сдвигает её строго в центр экрана */
+    }
 
 /* ПРИНУДИТЕЛЬНЫЙ ФИКС ДЛЯ СЕКЦИИ HERO */
 .hero {
