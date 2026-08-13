@@ -158,15 +158,14 @@
 <!-- Скрытый плеер для эффекта клика -->
     <audio id="click-sound" src="rickandmor_rdr0da12.mp3" preload="auto"></audio>
 
-    <!-- Скрипт, который включает звук при нажатии на аватар -->
+        <!-- Скрипт: Включение звука при нажатии на новый аватар -->
     <script>
-        const avatar = document.querySelector('.anime-avatar');
-        const sound = document.getElementById('click-sound');
+        const avatarContainer = document.querySelector('.super-avatar-mask');
+        const audio = new Audio('rickandmor_rdr0da12.mp3'); /* Вставили ваш правильный трек */
 
-        avatar.addEventListener('mousedown', () => {
-            sound.currentTime = 0; // Сбрасываем звук на начало, чтобы можно было кликать часто
-            sound.play();          // Запускаем воспроизведение
+        avatarContainer.addEventListener('click', () => {
+            audio.currentTime = 0;
+            audio.play(); /* Просто играет сочный трек при клике */
         });
     </script>
-</body>
-</html>
+
