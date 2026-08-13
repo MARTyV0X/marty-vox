@@ -705,32 +705,50 @@ nav a:hover::after {
     overflow: hidden !important;
     display: flex !important;
     align-items: center !important;
-    justify-content: center !important;
-    gap: 80px !important;
+    justify-content: center !important; /* Центрирует всю группу по центру экрана */
+    gap: 60px !important; /* Уменьшили расстояние, чтобы сблизить текст и аватарку */
     padding: 80px 8% !important;
     min-height: 85vh !important;
 }
 
-/* ИСПРАВЛЕННЫЙ ВИДЕО-ФОН: ТЕПЕРЬ ОН НЕ ВЛИЯЕТ НА РАЗМЕТКУ */
+/* ИСПРАВЛЕННЫЙ ВИДЕО-ФОН */
 .hero-video-bg {
     position: absolute !important;
     top: 50% !important;
     left: 50% !important;
-    transform: translate(-50%, -50%) !important; /* Центрируем строго по середине */
+    transform: translate(-50%, -50%) !important;
     width: 100% !important;
     height: 100% !important;
-    object-fit: cover !important; /* Намертво растягиваем на весь блок */
-    z-index: 1 !important;        /* Самый задний слой внутри .hero */
+    object-fit: cover !important;
+    z-index: 1 !important;        
     pointer-events: none !important;
-    opacity: 0.55 !important;     /* Чуть затемняем, чтобы плазма и текст горели ярче */
+    opacity: 0.55 !important;     
 }
 
-/* Поднимаем контент, аватарку и искры НАД видеороликом */
-.hero-content, 
-.hero-image, 
-.portal-particle {
+/* ЖЕСТКАЯ ФИКСАЦИЯ БЛОКА С ТЕКСТОМ */
+.hero-content {
+    max-width: 480px !important; /* Ограничили ширину текста, чтобы он не размазывался */
+    width: 100% !important;
+    flex-shrink: 0 !important;
+    text-align: left !important;
     position: relative !important;
-    z-index: 5 !important; /* Принудительно выводим вперед */
+    z-index: 5 !important;
+}
+
+/* ЖЕСТКАЯ ФИКСАЦИЯ АВАТАРКИ */
+.hero-image {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+    position: relative !important;
+    z-index: 5 !important;
+}
+
+/* Принудительно поднимаем искры */
+.portal-particle {
+    position: absolute !important;
+    z-index: 2 !important; /* Частицы летают ПЕРЕД видео, но ЗА текстом */
 }
 
 
