@@ -735,6 +735,23 @@ nav a:hover::after {
         display: table !important; /* Удерживает кнопку компактной */
         margin: 0 auto !important;   /* Сдвигает её строго в центр экрана */
     }
+        /* НЕПРОБИВАЕМЫЙ КРУГ ДЛЯ ВИДЕО НА СМАРТФОНАХ */
+    .super-avatar-mask {
+        width: 260px !important;
+        height: 260px !important;
+        border-radius: 50% !important;
+        overflow: hidden !important;
+        position: relative !important;
+        -webkit-mask-image: -webkit-radial-gradient(white, black) !important;
+        mask-image: radial-gradient(white, black) !important;
+        -webkit-transform: translate3d(0, 0, 0) !important;
+        transform: translate3d(0, 0, 0) !important;
+        border: 4px solid #39ff14 !important;
+        animation: portal-aura-pulse 2s infinite ease-in-out !important;
+        
+        /* ДОБАВИЛИ: Эта строка полностью растворит серый квадрат на телефонах! */
+        mix-blend-mode: screen !important; 
+    }
 
 /* ПРИНУДИТЕЛЬНЫЙ ФИКС ДЛЯ СЕКЦИИ HERO */
 .hero {
