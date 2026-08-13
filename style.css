@@ -703,11 +703,12 @@ nav a:hover::after {
 
 /* Адаптация под мобильные телефоны */
 @media (max-width: 768px) {
-    .glitch-text-final {
+        .glitch-text-final {
         font-size: 32px !important;
-        margin: 0 auto 20px auto !important; /* Центрируем текст на мобилках */
-        display: block !important;          /* ДОБАВИЛИ: Разрешаем блоку растянуться */
-        width: 100% !important;             /* ДОБАВИЛИ: Даем полную ширину для плазмы */
+        margin: 0 auto 20px auto !important; /* Центрирует сам блок на мобилках */
+        text-align: center !important;       /* ДОБАВИЛИ: Теперь и буквы внутри встанут ровно по центру! */
+        display: block !important;
+        width: 100% !important;
     }
     .plasma-bg-layer-final, .super-plasma-bg, .plasma-bg-layer, .plasma-bg-layer-final-v2 {
         width: 480px !important;            /* Принудительно задаем большую ширину */
