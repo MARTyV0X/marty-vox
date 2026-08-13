@@ -699,28 +699,40 @@ nav a:hover::after {
         max-width: 380px !important;
     }
 }
-/* ЖЕЛЕЗОБЕТОННЫЙ СЛОЙ ДЛЯ ВИДЕО-ФОНА */
-.hero-video-bg {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important; /* Растягивает видео без искажения пропорций */
-    z-index: 0 !important;        /* Самый задний план */
-    pointer-events: none !important;
-    opacity: 0.75 !important;     /* Слегка приглушаем, чтобы неоновый текст и плазма горели ярче */
+/* ПРИНУДИТЕЛЬНЫЙ ФИКС ДЛЯ СЕКЦИИ HERO */
+.hero {
+    position: relative !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 80px !important;
+    padding: 80px 8% !important;
+    min-height: 85vh !important;
 }
 
-/* Принудительно поднимаем контент, аватарку и частицы НАД видеороликом */
+/* ИСПРАВЛЕННЫЙ ВИДЕО-ФОН: ТЕПЕРЬ ОН НЕ ВЛИЯЕТ НА РАЗМЕТКУ */
+.hero-video-bg {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important; /* Центрируем строго по середине */
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Намертво растягиваем на весь блок */
+    z-index: 1 !important;        /* Самый задний слой внутри .hero */
+    pointer-events: none !important;
+    opacity: 0.55 !important;     /* Чуть затемняем, чтобы плазма и текст горели ярче */
+}
+
+/* Поднимаем контент, аватарку и искры НАД видеороликом */
 .hero-content, 
 .hero-image, 
-.portal-particle, 
-.glitch-text-final, 
-.plasma-title-container {
+.portal-particle {
     position: relative !important;
-    z-index: 5 !important;
+    z-index: 5 !important; /* Принудительно выводим вперед */
 }
+
 
 
 
