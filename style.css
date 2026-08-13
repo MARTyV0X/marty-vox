@@ -323,41 +323,31 @@ footer h2 {
 
 }
 
-/* ОБНОВЛЕННЫЙ ЖИВОЙ ВИДЕО-АВАТАР С ФИКСОМ ДЛЯ МОБИЛОК */
+/* ОБНОВЛЕННЫЙ ЖИВОЙ ВИДЕО-АВАТАР */
 .anime-avatar {
     width: 320px !important;
     height: 320px !important;
     object-fit: cover !important;
-    
-    /* Жесткое скругление углов, которое не слетит при клике */
-    border-radius: 50% !important; 
-    overflow: hidden !important;
-    -webkit-backface-visibility: hidden !important;
-    -webkit-transform: translate3d(0, 0, 0) !important;
-    
-    /* Секретный фикс для Safari/Chrome на смартфонах */
-    -webkit-mask-image: -webkit-radial-gradient(white, black) !important;
-    
+    border-radius: 50% !important; /* Намертво обрезаем квадратное видео в идеальный круг */
     border: 4px solid #39ff14 !important;
     box-shadow: 0 0 25px #39ff14 !important;
     transition: all 0.2s ease !important;
     flex-shrink: 0 !important;
     cursor: pointer !important;
     pointer-events: auto !important;
+    animation: none !important; /* УБРАЛИ СТАРЕЙШЕЕ ВРАЩЕНИЕ CSS */
 }
 
-/* Эффект при наведении */
+/* Эффект при наведении — просто усиливаем неоновое свечение */
 .anime-avatar:hover {
     box-shadow: 0 0 45px #39ff14, 0 0 70px rgba(57, 255, 20, 0.5) !important;
 }
 
-/* Эффект при клике (сохраняем сжатие и вспышку без потери круглой формы) */
+/* Эффект при клике (сохраняем сжатие и яростную неоновую вспышку) */
 .anime-avatar:active {
     transform: scale(0.95) !important;
-    border-radius: 50% !important; /* Дублируем для надежности на телефонах */
     box-shadow: 0 0 80px #39ff14, 0 0 150px #00f0ff !important;
 }
-
 
 /* На всякий случай убираем стандартное выделение ссылки вокруг аватара */
 .avatar-link {
@@ -651,25 +641,25 @@ nav a:hover::after {
    ФИНАЛЬНЫЙ СВЕРХНАДЕЖНЫЙ БЛОК ДЛЯ РАДИОАКТИВНОЙ ПЛАЗМЫ
    ========================================================================== */
 
-    /* Растягиваем заголовок на мобилках, чтобы плазме было где развернуться */
-    .glitch-text-final {
-        font-size: 34px !important;
-        margin: 0 auto 25px auto !important;
-        text-align: center !important;
-        width: 100% !important; /* Даем блоку полную ширину */
-        display: inline-block !important;
-    }
-    
-    /* Делаем плазму на телефонах большой и сочной */
-    .plasma-bg-layer-final {
-        width: 500px !important; /* Принудительно ставим большую ширину под размер экрана смартфона */
-        max-width: 140% !important; /* Позволяем ей слегка вылезать за границы букв */
-        height: auto !important;
-        top: 50% !important;
-        left: 50% !important;
-        transform: translate(-50%, -50%) !important; /* Идеальный центр за текстом */
-    }
+/* Настройка самого заголовка */
+.glitch-text-final {
+    position: relative !important;
+    display: block !important;
+    font-size: 48px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 25px !important;
+    animation: permanent-glitch 2s infinite linear !important; /* Наш глитч */
+    z-index: 2 !important;
+    width: fit-content !important; /* Сжимает блок строго под размер текста */
+}
 
+/* Настройка плазмы под текстом */
+.plasma-bg-layer-final {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important; /* Идеальный центр */
+    
     /* РАЗМЕР ПОД БУКВЫ */
     width: 550px !important; 
     height: auto !important;
@@ -701,42 +691,30 @@ nav a:hover::after {
     }
 }
 
-/* ЧЕТКАЯ АДАПТАЦИЯ СТРОГО ПОД МОБИЛЬНЫЕ ТЕЛЕФОНЫ */
+/* Адаптация под мобильные телефоны */
 @media (max-width: 768px) {
     .glitch-text-final {
-        font-size: 34px !important;
-        margin: 0 auto 25px auto !important;
-        text-align: center !important;
-        width: 100% !important;
-        display: block !important;
+        font-size: 32px !important;
+        margin: 0 auto 20px auto !important; /* Центрируем текст на мобилках */
     }
-    
     .plasma-bg-layer-final {
-        width: 480px !important; /* На телефонах делаем её оптимального размера под экран */
-        max-width: 130% !important;
-        top: 50% !important;
-        left: 50% !important;
-        transform: translate(-50%, -50%) !important;
+        width: 100% !important;
+        max-width: 380px !important;
     }
 }
-
-/* ==========================================================================
-   ФИНАЛЬНЫЙ СУПЕР-БЛОК ДЛЯ ПК И МОБИЛЬНЫХ (ПЛАЗМА И МАСКА)
-   ========================================================================== */
-
-/* Фикс всей секции главного экрана */
+/* ПРИНУДИТЕЛЬНЫЙ ФИКС ДЛЯ СЕКЦИИ HERO */
 .hero {
     position: relative !important;
     overflow: hidden !important;
     display: flex !important;
     align-items: center !important;
-    justify-content: center !important;
-    gap: 60px !important;
+    justify-content: center !important; /* Центрирует всю группу по центру экрана */
+    gap: 60px !important; /* Уменьшили расстояние, чтобы сблизить текст и аватарку */
     padding: 80px 8% !important;
     min-height: 85vh !important;
 }
 
-/* Видео-фон космоса */
+/* ИСПРАВЛЕННЫЙ ВИДЕО-ФОН */
 .hero-video-bg {
     position: absolute !important;
     top: 50% !important;
@@ -750,156 +728,31 @@ nav a:hover::after {
     opacity: 0.55 !important;     
 }
 
-/* Блок текста на ПК */
+/* ЖЕСТКАЯ ФИКСАЦИЯ БЛОКА С ТЕКСТОМ */
 .hero-content {
-    max-width: 480px !important;
+    max-width: 480px !important; /* Ограничили ширину текста, чтобы он не размазывался */
     width: 100% !important;
     flex-shrink: 0 !important;
     text-align: left !important;
-    margin: 0 !important;
     position: relative !important;
     z-index: 5 !important;
 }
 
-/* Контейнер под размер текста, удерживающий плазму */
-.super-title-box {
+/* ЖЕСТКАЯ ФИКСАЦИЯ АВАТАРКИ */
+.hero-image {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
     position: relative !important;
-    display: inline-block !important;
-    margin-bottom: 25px !important;
-    text-align: left !important;
-}
-
-/* Текст заголовка */
-.super-glitch-text {
-    position: relative !important;
-    font-family: 'Orbitron', sans-serif !important;
-    font-size: 48px !important;
-    line-height: 1.2 !important;
-    color: #fff !important;
-    animation: permanent-glitch 2s infinite linear !important;
-    z-index: 2 !important;
-    margin: 0 !important;
-}
-
-/* Большая плазма строго за текстом для ПК */
-.super-plasma-bg {
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    width: 550px !important; 
-    height: auto !important;
-    max-width: none !important;
-    z-index: -1 !important;
-    pointer-events: none !important;
-    animation: radioactive-plasma-final 2.5s infinite ease-in-out !important;
-}
-
-/* ЖЕСТКАЯ КРУГЛАЯ МАСКА ДЛЯ ВИДЕО-АВАТАРА */
-.super-avatar-mask {
-    position: relative !important;
-    width: 320px !important;
-    height: 320px !important;
-    border-radius: 50% !important; /* Намертво скругляет углы */
-    overflow: hidden !important;
-    border: 4px solid #39ff14 !important;
-    box-shadow: 0 0 25px #39ff14 !important;
-    transition: all 0.2s ease !important;
-    cursor: pointer !important;
-    /* Фиксы маски для мобильных браузеров */
-    -webkit-mask-image: -webkit-radial-gradient(white, black) !important;
-    mask-image: radial-gradient(white, black) !important;
     z-index: 5 !important;
 }
 
-.super-video-avatar {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    border-radius: 50% !important;
-    pointer-events: none !important; /* Убирает мобильные баги плеера */
-}
-
-/* Эффекты аватара */
-.super-avatar-mask:hover { box-shadow: 0 0 45px #39ff14, 0 0 70px rgba(57, 255, 20, 0.5) !important; }
-.super-avatar-mask:active { transform: scale(0.95) !important; box-shadow: 0 0 80px #39ff14, 0 0 150px #00f0ff !important; }
-
-.hero-image { display: flex !important; justify-content: center !important; align-items: center !important; flex-shrink: 0 !important; position: relative !important; z-index: 5 !important; }
-.portal-particle { position: absolute !important; z-index: 2 !important; }
-
-/* АДАПТАЦИЯ СТРОГО ПОД МОБИЛЬНЫЕ СМАРТФОНЫ */
-@media (max-width: 768px) {
-    .hero { flex-direction: column-reverse !important; text-align: center !important; gap: 35px !important; padding: 40px 4% !important; }
-    .hero-content { max-width: 100% !important; text-align: center !important; }
-    .super-title-box { display: block !important; text-align: center !important; width: 100% !important; }
-    .super-glitch-text { font-size: 34px !important; margin: 0 auto !important; }
-    .super-plasma-bg { width: 480px !important; max-width: 140% !important; top: 50% !important; left: 50% !important; transform: translate(-50%, -50%) !important; }
-    .super-avatar-mask { width: 260px !important; height: 260px !important; border-radius: 50% !important; }
-}
-/* ==========================================================================
-   ВОЗВРАЩЕНИЕ ЭФФЕКТА МОЛНИЙ И СВЕЧЕНИЯ ПРИ КЛИКЕ
-   ========================================================================== */
-
-/* Настройка контейнера, чтобы вспышка центрировалась внутри круга */
-.super-avatar-mask {
-    position: relative !important;
-}
-
-/* Сам эффект неонового взрыва молний (изначально скрыт) */
-.lightning-aura {
+/* Принудительно поднимаем искры */
+.portal-particle {
     position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    /* Ярко-голубое радиальное свечение с эффектом разряда */
-    background: radial-gradient(circle, rgba(0, 240, 255, 0.8) 0%, rgba(57, 255, 20, 0.4) 50%, transparent 80%) !important;
-    opacity: 0; /* Прозрачный по умолчанию */
-    transition: opacity 0.05s ease !important; /* Мгновенное появление при клике */
-    pointer-events: none !important;
-    z-index: 10 !important; /* Ложится поверх видео-аватара */
-    mix-blend-mode: screen !important; /* Делает вспышку сочной и неоновой */
-}
-/* ==========================================================================
-   КОМПАКТНАЯ СЕТКА РАБОТ И КОРРЕКТНЫЕ ВИДЕОПЛЕЕРЫ
-   ========================================================================== */
-
-/* Сетка карточек в 3 колонки */
-.works-grid, .blog-grid {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important; /* Карточки встанут в ряд */
-    gap: 30px !important;
-    width: 100% !important;
+    z-index: 2 !important; /* Частицы летают ПЕРЕД видео, но ЗА текстом */
 }
 
-/* Ограничение высоты видеоплееров, чтобы они не превращались в черные полосы */
-.card video {
-    width: 100% !important;
-    height: auto !important;
-    max-height: 200px !important; /* Плеер станет компактным прямоугольником */
-    object-fit: cover !important;
-    border-radius: 8px !important;
-    margin-top: 15px !important;
-    background-color: #000 !important;
-}
-
-/* Красивые отступы для заголовков секций */
-.section-title {
-    font-family: 'Orbitron', sans-serif !important;
-    font-size: 32px !important;
-    margin: 60px 0 40px 0 !important;
-    text-align: center !important;
-    color: #fff !important;
-}
-
-/* Мобильный фикс для сетки работ */
-@media (max-width: 768px) {
-    .works-grid, .blog-grid {
-        grid-template-columns: 1fr !important; /* На телефонах карточки встанут друг под друга */
-    }
-    .card video {
-        max-height: 180px !important;
-    }
-}
 
 
