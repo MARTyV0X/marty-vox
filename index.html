@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MARTy ИЗБУШКА ДАББЕРА | Anime Dubbing</title>
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css">
     <!-- Подключаем аниме-шрифт с Google Fonts -->
     <link href="https://googleapis.com" rel="stylesheet">
 </head>
@@ -21,11 +21,11 @@
         </nav>
     </header>
 
-               <!-- Главный экран (Hero) -->
+           <!-- Главный экран (Hero) -->
     <section id="about" class="hero">
         
-        <!-- ЖИВОЙ КОСМОС НА ЗАДНЕМ ПЛАНЕ -->
-        <video autoplay muted loop playsinline webkit-playsinline controlslist="nodownload noplaybackrate" class="hero-video-bg">
+        <!-- ЖИВОЙ КОСМОС НА ЗАДНЕМ ПЛАНЕ (БЕЗ ЗВУКА И В ПОВТОРЕ) -->
+        <video autoplay muted loop playsinline class="hero-video-bg">
             <source src="space-bg.mp4" type="video/mp4">
         </video>
 
@@ -46,30 +46,30 @@
         <div class="portal-particle p14"></div>
         <div class="portal-particle p15"></div>
 
-        <div class="hero-content">
-            <span class="badge">Любительская озвучка</span>
+         <div class="hero-content">
+         <span class="badge">Любительская озвучка</span>
             
-            <!-- СУПЕР-КОНТЕЙНЕР ДЛЯ ПЛАЗМЫ И ТЕКСТА -->
-            <div class="super-title-box">
-                <img src="text-glow.png?v=3" alt="Радиация" class="super-plasma-bg">
-                <h1 class="super-glitch-text">Озвучиваю <br><span class="highlight">Сердцем</span></h1>
-            </div>
-
+         <!-- ИДЕАЛЬНЫЙ ТАНДЕМ: ТЕКСТ И ПЛАЗМА ВМЕСТЕ -->
+<h1 class="glitch-text-final">
+    <img src="text-glow.png" alt="Радиация" class="plasma-bg-layer-final">
+    Озвучиваю <br><span class="highlight">Сердцем</span>
+</h1>
             <p class="hero-description">Добро пожаловать в мой блог актёра дубляжа и закадра. Даю жизнь персонажам аниме, игр и фильмов, дающих жизнь героям, созданных для погружения в новые миры. Послушайте мои демо-записи ниже!</p>
             <a href="#works" class="cta-btn anime-btn">Слушать Демо</a>
         </div>
-        
-        <div class="hero-image">
-            <!-- СУПЕР-МАСКА ДЛЯ ЗАЩИТЫ ВИДЕО-АВАТАРА ОТ КВАДРАТОВ -->
-            <div class="super-avatar-mask">
-                <video autoplay muted loop playsinline webkit-playsinline controlslist="nodownload noplaybackrate" class="super-video-avatar">
+
+
+                <div class="hero-image">
+            <div class="avatar-container">
+                <!-- Заменили картинку на зацикленный бесшумный видеоплеер -->
+                <video autoplay muted loop playsinline class="anime-avatar">
                     <source src="avatar.mp4" type="video/mp4">
                 </video>
                 <div class="lightning-aura"></div>
             </div>
         </div>
-    </section>
 
+    </section>
 
 <!-- Специальный SVG-код для генерации ломаных линий молнии (вставьте сразу под hero-image) -->
 <svg style="position: absolute; width: 0; height: 0;">
@@ -158,14 +158,15 @@
 <!-- Скрытый плеер для эффекта клика -->
     <audio id="click-sound" src="rickandmor_rdr0da12.mp3" preload="auto"></audio>
 
-        <!-- Скрипт: Включение звука при нажатии на новый аватар -->
+    <!-- Скрипт, который включает звук при нажатии на аватар -->
     <script>
-        const avatarContainer = document.querySelector('.super-avatar-mask');
-        const audio = new Audio('rickandmor_rdr0da12.mp3'); /* Вставили ваш правильный трек */
+        const avatar = document.querySelector('.anime-avatar');
+        const sound = document.getElementById('click-sound');
 
-        avatarContainer.addEventListener('click', () => {
-            audio.currentTime = 0;
-            audio.play(); /* Просто играет сочный трек при клике */
+        avatar.addEventListener('mousedown', () => {
+            sound.currentTime = 0; // Сбрасываем звук на начало, чтобы можно было кликать часто
+            sound.play();          // Запускаем воспроизведение
         });
     </script>
-
+</body>
+</html>
