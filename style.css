@@ -634,6 +634,71 @@ nav a:hover::after {
         transform: translate(-50%, -50%) scale(1);
     }
 }
+/* ==========================================================================
+   ФИНАЛЬНЫЙ СВЕРХНАДЕЖНЫЙ БЛОК ДЛЯ РАДИОАКТИВНОЙ ПЛАЗМЫ
+   ========================================================================== */
+
+/* Настройка самого заголовка */
+.glitch-text-final {
+    position: relative !important;
+    display: block !important;
+    font-size: 48px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 25px !important;
+    animation: permanent-glitch 2s infinite linear !important; /* Наш глитч */
+    z-index: 2 !important;
+    width: fit-content !important; /* Сжимает блок строго под размер текста */
+}
+
+/* Настройка плазмы под текстом */
+.plasma-bg-layer-final {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important; /* Идеальный центр */
+    
+    /* РАЗМЕР ПОД БУКВЫ */
+    width: 550px !important; 
+    height: auto !important;
+    max-width: none !important;
+    
+    z-index: -1 !important; /* Уходит строго под буквы */
+    pointer-events: none !important;
+    user-select: none !important;
+    
+    animation: radioactive-plasma-final 2.5s infinite ease-in-out !important;
+}
+
+/* Пульсация зеленой радиации */
+@keyframes radioactive-plasma-final {
+    0% {
+        opacity: 0.6;
+        filter: drop-shadow(0 0 15px #39ff14) drop-shadow(0 0 30px rgba(57, 255, 20, 0.4));
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 1;
+        filter: drop-shadow(0 0 35px #39ff14) drop-shadow(0 0 65px #00f0ff);
+        transform: translate(-50%, -48%) scale(1.03); /* Мягкое покачивание */
+    }
+    100% {
+        opacity: 0.6;
+        filter: drop-shadow(0 0 15px #39ff14) drop-shadow(0 0 30px rgba(57, 255, 20, 0.4));
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Адаптация под мобильные телефоны */
+@media (max-width: 768px) {
+    .glitch-text-final {
+        font-size: 32px !important;
+        margin: 0 auto 20px auto !important; /* Центрируем текст на мобилках */
+    }
+    .plasma-bg-layer-final {
+        width: 100% !important;
+        max-width: 380px !important;
+    }
+}
 
 
 
