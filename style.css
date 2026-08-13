@@ -651,25 +651,25 @@ nav a:hover::after {
    ФИНАЛЬНЫЙ СВЕРХНАДЕЖНЫЙ БЛОК ДЛЯ РАДИОАКТИВНОЙ ПЛАЗМЫ
    ========================================================================== */
 
-/* Настройка самого заголовка */
-.glitch-text-final {
-    position: relative !important;
-    display: block !important;
-    font-size: 48px !important;
-    line-height: 1.2 !important;
-    margin-bottom: 25px !important;
-    animation: permanent-glitch 2s infinite linear !important; /* Наш глитч */
-    z-index: 2 !important;
-    width: fit-content !important; /* Сжимает блок строго под размер текста */
-}
-
-/* Настройка плазмы под текстом */
-.plasma-bg-layer-final {
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important; /* Идеальный центр */
+    /* Растягиваем заголовок на мобилках, чтобы плазме было где развернуться */
+    .glitch-text-final {
+        font-size: 34px !important;
+        margin: 0 auto 25px auto !important;
+        text-align: center !important;
+        width: 100% !important; /* Даем блоку полную ширину */
+        display: inline-block !important;
+    }
     
+    /* Делаем плазму на телефонах большой и сочной */
+    .plasma-bg-layer-final {
+        width: 500px !important; /* Принудительно ставим большую ширину под размер экрана смартфона */
+        max-width: 140% !important; /* Позволяем ей слегка вылезать за границы букв */
+        height: auto !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important; /* Идеальный центр за текстом */
+    }
+
     /* РАЗМЕР ПОД БУКВЫ */
     width: 550px !important; 
     height: auto !important;
