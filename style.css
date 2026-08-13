@@ -710,6 +710,12 @@ nav a:hover::after {
         display: block !important;
         width: 100% !important;
     }
+
+    /* ЦЕНТРИРУЕМ ЗЕЛЕНУЮ ПЛАШКУ НА ТЕЛЕФОНАХ */
+    .badge {
+        display: table !important; /* Удерживает плашку компактной, под размер текста */
+        margin: 0 auto 15px auto !important; /* Выравнивает её строго по центру экрана */
+    }
     .plasma-bg-layer-final, .super-plasma-bg, .plasma-bg-layer, .plasma-bg-layer-final-v2 {
         width: 480px !important;            /* Принудительно задаем большую ширину */
         max-width: 140% !important;         /* Позволяем ей вылезать за границы текста по бокам */
