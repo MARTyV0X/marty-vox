@@ -706,16 +706,19 @@ nav a:hover::after {
     .glitch-text-final {
         font-size: 32px !important;
         margin: 0 auto 20px auto !important; /* Центрируем текст на мобилках */
+        display: block !important;          /* ДОБАВИЛИ: Разрешаем блоку растянуться */
+        width: 100% !important;             /* ДОБАВИЛИ: Даем полную ширину для плазмы */
     }
-    .plasma-bg-layer-final, .super-plasma-bg {
-        width: 480px !important;      /* Принудительно задаем большую ширину */
-        max-width: 140% !important;   /* Позволяем ей вылезать за границы текста по бокам */
+    .plasma-bg-layer-final, .super-plasma-bg, .plasma-bg-layer, .plasma-bg-layer-final-v2 {
+        width: 480px !important;            /* Принудительно задаем большую ширину */
+        max-width: 140% !important;         /* Позволяем ей вылезать за границы текста по бокам */
         height: auto !important;
         top: 50% !important;
         left: 50% !important;
-        transform: translate(-50%, -50%) !important; /* Удерживаем идеальный центр за текстом */
+        transform: translate(-50%, -50%) !important; /* Удерживаем идеальный中心 за текстом */
     }
 }
+
 /* ПРИНУДИТЕЛЬНЫЙ ФИКС ДЛЯ СЕКЦИИ HERO */
 .hero {
     position: relative !important;
