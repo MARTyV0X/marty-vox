@@ -750,6 +750,12 @@ nav a:hover::after {
         animation: portal-aura-pulse 2s infinite ease-in-out !important;
         mix-blend-mode: screen !important; 
     } /* ЭТА СКОБКА ТЕПЕРЬ СТОИТ ТУТ И ЗАКРЫВАЕТ АВАТАРКУ */
+        /* ПРИНУДИТЕЛЬНОЕ СКРУГЛЕНИЕ ВИДЕО НА ТЕЛЕФОНАХ */
+    .super-video-avatar, .anime-avatar {
+        border-radius: 50% !important;
+        -webkit-border-radius: 50% !important;
+        clip-path: circle(50% at 50% 50%) !important; /* Жесткая обрезка углов самого видеофайла */
+    }
 }
 
 /* ПРИНУДИТЕЛЬНЫЙ ФИКС ДЛЯ СЕКЦИИ HERO */
