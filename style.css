@@ -710,8 +710,8 @@ nav a:hover::after {
         width: 100% !important;             /* ДОБАВИЛИ: Даем полную ширину для плазмы */
     }
     .plasma-bg-layer-final, .super-plasma-bg, .plasma-bg-layer, .plasma-bg-layer-final-v2 {
-        width: 530px !important;            /* Принудительно задаем большую ширину */
-        max-width: 160% !important;         /* Позволяем ей вылезать за границы текста по бокам */
+        width: 500px !important;            /* Принудительно задаем большую ширину */
+        max-width: 140% !important;         /* Позволяем ей вылезать за границы текста по бокам */
         height: auto !important;
         top: 50% !important;
         left: 50% !important;
