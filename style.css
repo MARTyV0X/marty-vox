@@ -707,9 +707,13 @@ nav a:hover::after {
         font-size: 32px !important;
         margin: 0 auto 20px auto !important; /* Центрируем текст на мобилках */
     }
-    .plasma-bg-layer-final {
-        width: 100% !important;
-        max-width: 380px !important;
+    .plasma-bg-layer-final, .super-plasma-bg {
+        width: 480px !important;      /* Принудительно задаем большую ширину */
+        max-width: 140% !important;   /* Позволяем ей вылезать за границы текста по бокам */
+        height: auto !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important; /* Удерживаем идеальный центр за текстом */
     }
 }
 /* ПРИНУДИТЕЛЬНЫЙ ФИКС ДЛЯ СЕКЦИИ HERO */
