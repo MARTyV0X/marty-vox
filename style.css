@@ -775,5 +775,20 @@ nav a:hover::after {
     position: absolute !important;
     z-index: 2 !important; 
 }
+    /* Фикс круглой формы аватара для смартфонов */
+    .avatar-container {
+        position: relative !important;
+        border-radius: 50% !important;
+        overflow: hidden !important;
+        -webkit-mask-image: -webkit-radial-gradient(white, black) !important;
+        mask-image: radial-gradient(white, black) !important;
+    }
+    .anime-avatar {
+        border-radius: 50% !important;
+        object-fit: cover !important;
+    }
+    .avatar-container:active {
+        border-radius: 50% !important;
+    }
 
 
